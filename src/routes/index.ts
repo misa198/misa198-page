@@ -2,7 +2,7 @@ import { FC, lazy, LazyExoticComponent } from "react";
 
 interface Route {
   name: string;
-  to: string;
+  path: string;
   exact: boolean;
   component: LazyExoticComponent<FC>;
 }
@@ -10,7 +10,7 @@ interface Route {
 const routes: Route[] = [
   {
     name: "home",
-    to: "/",
+    path: "/",
     exact: true,
     component: lazy(() => import("src/containers/Home")),
   },
