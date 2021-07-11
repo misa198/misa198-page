@@ -6,6 +6,7 @@ import { down } from "styled-breakpoints";
 export const HeaderWrapper = styled.header`
   width: 100vw;
   position: relative;
+  z-index: 2;
 `;
 
 export const HeaderContainer = styled(Container)`
@@ -54,7 +55,6 @@ export const HeaderNavLinksOverlay = styled.div<{ isShowMenu: boolean }>`
 
 export const HeaderNavLinks = styled.div<{ isShowMenu: boolean }>`
   display: flex;
-  z-index: 2;
 
   ${down("sm")} {
     position: absolute;
