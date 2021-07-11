@@ -7,10 +7,9 @@ import { ReactComponent as AboutBackgroundImage } from "src/assets/images/about-
 export const AboutWrapper = styled.section`
   width: 100%;
   background-image: url("/images/background.svg");
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
   width: 100%;
   background-position: right top;
   background-repeat: no-repeat;

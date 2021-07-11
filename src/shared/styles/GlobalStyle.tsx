@@ -20,4 +20,19 @@ export default createGlobalStyle<{
     color: ${(props) => props.theme.colorBlack08};
     text-decoration: none;
   }
+
+  #root {
+    overflow-x: hidden;
+    min-height: 100vh;
+    width: 100vw;
+  }
+
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 `;
