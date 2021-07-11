@@ -27,6 +27,9 @@ const Header: FC = () => {
           <Link to="/#contact">
             <HeaderNavLink>Contact</HeaderNavLink>
           </Link>
+          <Link to="/portfolio">
+            <HeaderNavLink>Portfolio</HeaderNavLink>
+          </Link>
         </HeaderNavLinks>
       </HeaderContainer>
     </HeaderWrapper>
