@@ -1,8 +1,10 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
+import useResizeObserver from "use-resize-observer";
 
 import {
   AboutWrapper,
+  AboutBackground,
   AboutContainer,
   AboutContent,
   AboutContentTitle,
@@ -13,8 +15,11 @@ import {
 } from "./styled";
 
 const About: FC = () => {
+  const { ref, height = 0 } = useResizeObserver<HTMLDivElement>();
+
   return (
-    <AboutWrapper id="about">
+    <AboutWrapper id="about" ref={ref}>
+      <AboutBackground height={height} />
       <AboutContainer>
         <AboutContent>
           <AboutContentTitle>Hello, I am Thanh Vu.</AboutContentTitle>

@@ -6,14 +6,19 @@ import { ReactComponent as AboutBackgroundImage } from "src/assets/images/about-
 
 export const AboutWrapper = styled.section`
   width: 100%;
+  padding-top: 5rem;
+`;
+
+export const AboutBackground = styled.div<{ height: number }>`
+  width: 100%;
+  height: ${(props) => props.height}px;
   background-image: url("/images/background.svg");
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  z-index: -1;
   background-position: right top;
   background-repeat: no-repeat;
-  padding-top: 5rem;
 `;
 
 export const AboutContainer = styled(Container)`
