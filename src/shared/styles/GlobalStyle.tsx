@@ -14,6 +14,7 @@ export default createGlobalStyle<{
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 1rem;
     color: ${(props) => props.theme.colorBlack08};
+    scroll-behavior: smooth;
   }
 
   a {

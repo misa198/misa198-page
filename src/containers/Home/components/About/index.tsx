@@ -14,24 +14,22 @@ import {
 
 const About: FC = () => {
   return (
-    <>
-      <AboutWrapper>
-        <AboutContainer>
-          <AboutContent>
-            <AboutContentTitle>Hello, I am Thanh Vu.</AboutContentTitle>
-            <AboutContentDescription>Nice to meet you!</AboutContentDescription>
-            <Link to="/portfolio">
-              <AboutContentButton variant="contained" color="primary">
-                See more
-              </AboutContentButton>
-            </Link>
-          </AboutContent>
-          <AboutThumb>
-            <AboutThumbImage />
-          </AboutThumb>
-        </AboutContainer>
-      </AboutWrapper>
-    </>
+    <AboutWrapper id="about">
+      <AboutContainer>
+        <AboutContent>
+          <AboutContentTitle>Hello, I am Thanh Vu.</AboutContentTitle>
+          <AboutContentDescription>Nice to meet you!</AboutContentDescription>
+          <Link to="/portfolio">
+            <AboutContentButton variant="contained" color="primary">
+              See more
+            </AboutContentButton>
+          </Link>
+        </AboutContent>
+        <AboutThumb>
+          <AboutThumbImage />
+        </AboutThumb>
+      </AboutContainer>
+    </AboutWrapper>
   );
 };
 
