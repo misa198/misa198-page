@@ -1,16 +1,7 @@
 import axios from "axios";
 
 import { username } from "src/constants/config";
-
-interface PinnedRepository {
-  owner: string;
-  repo: string;
-  link: string;
-  description: string;
-  language: string;
-  stars: string;
-  forks: number;
-}
+import { PinnedRepository } from "src/types/PinnedRepository";
 
 export async function fetchPinnedRepositories(): Promise<PinnedRepository[]> {
   const response = await axios.get(
