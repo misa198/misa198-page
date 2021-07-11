@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { Tooltip } from "@material-ui/core";
 import { GitHub, Twitter, GitPullRequest } from "react-feather";
 
 import {
@@ -20,19 +21,25 @@ const Footer: FC = () => {
           <FooterCopyright>© 2021 | Made by Misa198</FooterCopyright>
           <FooterBackLinks>
             <FooterBackLink href="https://github.com/misa198" target="_blank">
-              <GitHub />
+              <Tooltip title="Github">
+                <GitHub />
+              </Tooltip>
             </FooterBackLink>
             <FooterBackLink
               href="https://twitter.com/misa19820"
               target="_blank"
             >
-              <Twitter />
+              <Tooltip title="Twitter">
+                <Twitter />
+              </Tooltip>
             </FooterBackLink>
             <FooterBackLink
               href="https://github.com/misa198/misa198.github.io"
               target="_blank"
             >
-              <GitPullRequest />
+              <Tooltip title="Fork me">
+                <GitPullRequest />
+              </Tooltip>
             </FooterBackLink>
           </FooterBackLinks>
         </FooterContent>
