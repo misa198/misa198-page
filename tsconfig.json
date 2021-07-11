@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES2018",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
     "allowJs": true,
+    "sourceMap": false,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -18,9 +19,15 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "."
   },
   "include": [
-    "src"
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts",
+    "vscode"
   ]
 }
