@@ -27,24 +27,27 @@ const Header: FC = () => {
           <HeaderLogo>Misa198</HeaderLogo>
         </Link>
         <HeaderBurger onClick={switchMenuStatus} />
-        <HeaderNavLinksOverlay isShowMenu={isShowMenu} />
+        <HeaderNavLinksOverlay
+          isShowMenu={isShowMenu}
+          onClick={switchMenuStatus}
+        />
         <HeaderNavLinks isShowMenu={isShowMenu}>
           <HeaderNavLinkCloseWrapper>
             <HeaderNavLinkClose onClick={switchMenuStatus} />
           </HeaderNavLinkCloseWrapper>
-          <Link to="/#about">
+          <Link to="/#about" onClick={switchMenuStatus}>
             <HeaderNavLink>About</HeaderNavLink>
           </Link>
-          <Link to="/#projects">
+          <Link to="/#projects" onClick={switchMenuStatus}>
             <HeaderNavLink>Projects</HeaderNavLink>
           </Link>
-          <Link to="/#contact">
+          <Link to="/#contact" onClick={switchMenuStatus}>
             <HeaderNavLink>Contact</HeaderNavLink>
           </Link>
-          <Link to="/portfolio">
+          <Link to="/portfolio" onClick={switchMenuStatus}>
             <HeaderNavLink>Portfolio</HeaderNavLink>
           </Link>
-          <Link to="/blogs">
+          <Link to="/blogs" onClick={switchMenuStatus}>
             <HeaderNavLink>Blogs</HeaderNavLink>
           </Link>
         </HeaderNavLinks>

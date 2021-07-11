@@ -78,7 +78,7 @@ export const HeaderNavLinkCloseWrapper = styled.div`
   ${down("sm")} {
     display: flex;
     width: 100%;
-    padding: 1rem;
+    padding: 1rem 1rem 0.5rem 1rem;
   }
 `;
 
@@ -99,6 +99,6 @@ export const HeaderNavLink = styled.div`
   }
 
   ${down("sm")} {
-    margin-bottom: 1rem;
+    padding: 0.5rem 0;
   }
 `;
