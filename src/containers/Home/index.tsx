@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import About from "src/components/About";
+import About from "src/containers/Home/components/About";
 
 const Home: FC = () => {
   return (
