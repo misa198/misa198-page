@@ -1,12 +1,15 @@
 import { FC } from "react";
 
-import { AboutWrapper, AboutContainer } from "./styled";
+import { AboutWrapper, AboutBackground, AboutContainer } from "./styled";
 
 const About: FC = () => {
   return (
-    <AboutWrapper>
-      <AboutContainer>Mew</AboutContainer>
-    </AboutWrapper>
+    <>
+      <AboutBackground />
+      <AboutWrapper>
+        <AboutContainer>Mew</AboutContainer>
+      </AboutWrapper>
+    </>
   );
 };
 

@@ -13,10 +13,11 @@ export default createGlobalStyle<{
   body {
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 1rem;
+    color: ${(props) => props.theme.colorBlack07};
   }
 
   a {
-    color: ${(props) => props.theme.colorBlack};
+    color: ${(props) => props.theme.colorBlack07};
     text-decoration: none;
   }
 `;

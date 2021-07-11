@@ -9,7 +9,7 @@ const App: FC = () => {
     <Suspense fallback={<>Loading...</>}>
       <Header />
       {routes.map((route) => (
-        <Route {...route} />
+        <Route {...route} key={route.name} />
       ))}
     </Suspense>
   );
