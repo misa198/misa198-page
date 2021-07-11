@@ -66,7 +66,7 @@ export const HeaderNavLinks = styled.div<{ isShowMenu: boolean }>`
     z-index: 3;
     display: flex;
     flex-direction: column;
-    transition: all 300ms ease;
+    transition: all 300ms;
     transform: translateX(${(props) => (props.isShowMenu ? "0" : "280px")});
   }
 `;
