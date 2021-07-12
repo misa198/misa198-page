@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Tooltip } from "@material-ui/core";
-import { GitHub, Twitter, GitPullRequest } from "react-feather";
+import { GitHub, Twitter, Linkedin } from "react-feather";
 
 import {
   FooterWrapper,
@@ -34,11 +34,11 @@ const Footer: FC = () => {
               </Tooltip>
             </FooterBackLink>
             <FooterBackLink
-              href="https://github.com/misa198/misa198.github.io"
+              href="https://www.linkedin.com/in/th%C3%A0nh-v%C5%A9-2223581b3/"
               target="_blank"
             >
-              <Tooltip title="Fork me">
-                <GitPullRequest />
+              <Tooltip title="Linkedin">
+                <Linkedin />
               </Tooltip>
             </FooterBackLink>
           </FooterBackLinks>
