@@ -1,5 +1,7 @@
 import { FC, Suspense } from "react";
 import { Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { Main, AppWrapper } from "src/styled";
 import Header from "src/components/Header";
@@ -17,6 +19,7 @@ const App: FC = () => {
           ))}
         </Main>
         <Footer />
+        <ToastContainer />
       </AppWrapper>
     </Suspense>
   );

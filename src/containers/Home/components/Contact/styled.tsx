@@ -87,6 +87,8 @@ export const ContactFormButtonWrapper = styled.div`
 `;
 
 export const ContactFormButton = styled(Button)`
+  width: 100px;
+  height: 40px;
   font-weight: 400 !important;
   text-transform: none !important;
 `;

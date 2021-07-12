@@ -1,6 +1,10 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { toast } from "react-toastify";
+import { CircularProgress } from "@material-ui/core";
+
+import { postContact } from "src/services/sheet.service";
 
 import {
   ContactWrapper,
@@ -23,11 +27,28 @@ const schema = yup.object().shape({
 });
 
 const Contact: FC = () => {
+  const [loading, setLoading] = useState(false);
+
   const formik = useFormik({
     initialValues: { fullName: "", email: "", message: "" },
     validationSchema: schema,
     onSubmit: (formValues) => {
-      console.log(formValues);
+      if (!loading) {
+        setLoading(true);
+        postContact(formValues)
+          .then(() => {
+            setLoading(false);
+            toast.success("Successfully", {
+              position: "top-right",
+            });
+          })
+          .catch(() => {
+            setLoading(false);
+            toast.error("Error", {
+              position: "top-right",
+            });
+          });
+      }
     },
   });
 
@@ -87,7 +108,11 @@ const Contact: FC = () => {
                 color="primary"
                 type="submit"
               >
-                Submit
+                {loading ? (
+                  <CircularProgress color="inherit" size="20px" />
+                ) : (
+                  "Submit"
+                )}
               </ContactFormButton>
             </ContactFormButtonWrapper>
           </ContactForm>
