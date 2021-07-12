@@ -35,15 +35,22 @@ const Header: FC = () => {
           <HeaderNavLinkCloseWrapper>
             <HeaderNavLinkClose onClick={switchMenuStatus} />
           </HeaderNavLinkCloseWrapper>
-          <Link to="/" onClick={switchMenuStatus}>
-            <HeaderNavLink>Home</HeaderNavLink>
-          </Link>
-          <Link to="/portfolio" onClick={switchMenuStatus}>
-            <HeaderNavLink>Portfolio</HeaderNavLink>
-          </Link>
-          <Link to="/blogs" onClick={switchMenuStatus}>
-            <HeaderNavLink>Blogs</HeaderNavLink>
-          </Link>
+
+          <HeaderNavLink>
+            <Link to="/" onClick={switchMenuStatus}>
+              Home
+            </Link>
+          </HeaderNavLink>
+          <HeaderNavLink>
+            <Link to="/portfolio" onClick={switchMenuStatus}>
+              Portfolio
+            </Link>
+          </HeaderNavLink>
+          <HeaderNavLink>
+            <Link to="/blogs" onClick={switchMenuStatus}>
+              Blogs
+            </Link>
+          </HeaderNavLink>
         </HeaderNavLinks>
       </HeaderContainer>
     </HeaderWrapper>
