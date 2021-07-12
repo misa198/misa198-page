@@ -88,12 +88,17 @@ export const HeaderNavLinkClose = styled(X)`
 export const HeaderNavLink = styled.div`
   width: fit-content;
   margin-left: 1.5rem;
-  transition: color 300ms;
   cursor: pointer;
   user-select: none;
 
+  * {
+    transition: color 300ms;
+  }
+
   &:hover {
-    color: ${(props) => props.theme.colorPrimary};
+    * {
+      color: ${(props) => props.theme.colorPrimary};
+    }
   }
 
   ${down("sm")} {
