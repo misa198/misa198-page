@@ -1,5 +1,6 @@
 import { FC, useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { Helmet } from "react-helmet";
 
 import { fetchPinnedRepositories } from "src/store/thunks/home.thunk";
 import About from "src/containers/Home/components/About";
@@ -17,6 +18,9 @@ const Home: FC = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Misa198</title>
+      </Helmet>
       <About />
       <Projects />
       <Contributions />
