@@ -10,7 +10,7 @@ const Blogs: FC = () => {
         <title>Blogs - Misa198</title>
       </Helmet>
       <BlogsWrapper>
-        <BlogsContainer>Updating...</BlogsContainer>
+        <BlogsContainer>Updating blogs...</BlogsContainer>
       </BlogsWrapper>
     </>
   );
