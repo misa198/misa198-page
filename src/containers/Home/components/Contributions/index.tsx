@@ -12,9 +12,7 @@ const Contributions: FC = () => {
   return (
     <ContributionsWrapper>
       <ContributionsContainer>
-        <ContributionsTitle>
-          Github&apos;s public contributions
-        </ContributionsTitle>
+        <ContributionsTitle>Github contributions</ContributionsTitle>
         <ContributionsCalendarWrapper>
           <GitHubCalendar
             showTotalCount
