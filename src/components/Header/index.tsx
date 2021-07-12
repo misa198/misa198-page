@@ -35,14 +35,8 @@ const Header: FC = () => {
           <HeaderNavLinkCloseWrapper>
             <HeaderNavLinkClose onClick={switchMenuStatus} />
           </HeaderNavLinkCloseWrapper>
-          <Link to="/#about" onClick={switchMenuStatus}>
-            <HeaderNavLink>About</HeaderNavLink>
-          </Link>
-          <Link to="/#projects" onClick={switchMenuStatus}>
-            <HeaderNavLink>Projects</HeaderNavLink>
-          </Link>
-          <Link to="/#contact" onClick={switchMenuStatus}>
-            <HeaderNavLink>Contact</HeaderNavLink>
+          <Link to="/" onClick={switchMenuStatus}>
+            <HeaderNavLink>Home</HeaderNavLink>
           </Link>
           <Link to="/portfolio" onClick={switchMenuStatus}>
             <HeaderNavLink>Portfolio</HeaderNavLink>
