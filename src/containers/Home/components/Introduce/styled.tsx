@@ -24,6 +24,10 @@ export const IntroduceContainer = styled(Container)`
 export const IntroduceThumbWrapper = styled.div`
   flex: 4;
   padding: 0 2rem;
+
+  ${down("sm")} {
+    width: 80%;
+  }
 `;
 
 export const IntroduceThumb = styled(IntroduceBackground)`
@@ -34,6 +38,7 @@ export const IntroduceContent = styled.div`
   flex: 5;
 
   ${down("sm")} {
+    width: 100%;
     margin-top: 2rem;
     text-align: center;
   }
@@ -60,6 +65,9 @@ export const IntroduceContentText = styled.p`
   }
 
   ${down("sm")} {
+    width: 90%;
     padding-right: 0;
+    line-height: 1.3;
+    width: 100%;
   }
 `;
