@@ -7,6 +7,10 @@ import { ReactComponent as AboutBackgroundImage } from "src/assets/images/about-
 export const AboutWrapper = styled.section`
   width: 100%;
   padding-top: 5rem;
+
+  ${down("sm")} {
+    padding-top: 0;
+  }
 `;
 
 export const AboutBackground = styled.div<{ height: number }>`
