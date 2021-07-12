@@ -22,14 +22,6 @@ export default createGlobalStyle<{
     text-decoration: none;
   }
 
-  #root {
-    overflow-x: hidden;
-    min-height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-  }
-
   @keyframes appear {
     0% {
       opacity: 0;
