@@ -6,6 +6,7 @@ import About from "src/containers/Home/components/About";
 import Projects from "./components/Projects";
 import Contributions from "./components/Contributions";
 import Introduce from "./components/Introduce";
+import Contact from "./components/Contact";
 
 const Home: FC = () => {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ const Home: FC = () => {
       <Projects />
       <Contributions />
       <Introduce />
+      <Contact />
     </>
   );
 };
