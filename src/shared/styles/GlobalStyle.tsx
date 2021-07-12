@@ -22,6 +22,19 @@ export default createGlobalStyle<{
     text-decoration: none;
   }
 
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: ${(props) => props.theme.colorBlack02};
+    border-radius: 10px;
+  }
+
   @keyframes appear {
     0% {
       opacity: 0;
