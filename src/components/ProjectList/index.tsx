@@ -12,7 +12,7 @@ const ProjectList: FC<PropTypes> = ({ repositories }) => {
   return (
     <ProjectListWrapper>
       {repositories.map((repository) => (
-        <ProjectItem key={repository.link}>
+        <ProjectItem key={`${repository.owner}/${repository.repo}`}>
           <ProjectCard repository={repository} />
         </ProjectItem>
       ))}

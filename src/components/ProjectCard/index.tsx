@@ -24,7 +24,10 @@ interface PropTypes {
 const ProjectCard: FC<PropTypes> = ({ repository }) => {
   return (
     <ProjectCardLinkWrapper>
-      <ProjectCardLink href={repository.link} target="_blank">
+      <ProjectCardLink
+        href={`https://github.com/${repository.owner}/${repository.repo}`}
+        target="_blank"
+      >
         <ProjectCardWrapper>
           <ProjectCardTitle>{`${repository.owner} / ${repository.repo}`}</ProjectCardTitle>
           <ProjectCardDescription>
