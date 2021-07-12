@@ -10,7 +10,7 @@ const Portfolio: FC = () => {
         <title>Portfolio - Misa198</title>
       </Helmet>
       <PortfolioWrapper>
-        <PortfolioContainer>Updating...</PortfolioContainer>
+        <PortfolioContainer>Updating portfolio...</PortfolioContainer>
       </PortfolioWrapper>
     </>
   );
