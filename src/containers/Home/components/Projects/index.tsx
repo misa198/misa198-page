@@ -1,27 +1,23 @@
-import { FC } from "react";
+import { FC, memo } from "react";
+import { useSelector } from "react-redux";
 
-import ProjectCard from "src/components/ProjectCard";
+import ProjectList from "src/components/ProjectList";
+import { RootState } from "src/store";
 import { ProjectsWrapper, ProjectsContainer, ProjectsTitle } from "./styled";
 
 const Projects: FC = () => {
+  const pinnedRepositoriesState = useSelector(
+    (state: RootState) => state.home.pinnedRepositories
+  );
+
   return (
     <ProjectsWrapper>
       <ProjectsContainer>
         <ProjectsTitle>Projects</ProjectsTitle>
-        <ProjectCard
-          repository={{
-            owner: "Misabot",
-            repo: "misabot-discord",
-            link: "https://github.com/Misabot/misabot-discord",
-            description: "Play Music in Discord.",
-            language: "TypeScript",
-            stars: "3",
-            forks: 0,
-          }}
-        />
+        <ProjectList repositories={pinnedRepositoriesState.data} />
       </ProjectsContainer>
     </ProjectsWrapper>
   );
 };
 
-export default Projects;
+export default memo(Projects);

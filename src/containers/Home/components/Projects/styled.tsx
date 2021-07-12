@@ -8,7 +8,7 @@ export const ProjectsWrapper = styled.section`
 export const ProjectsContainer = styled(Container)``;
 
 export const ProjectsTitle = styled.h3`
-  margin: 0px 0px 1.45rem;
+  margin-bottom: 1.6rem;
   padding: 0px;
   color: inherit;
   font-weight: bold;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ProjectCardLinkWrapper = styled.div`
-  width: 300px;
+  width: 100%;
 `;
 
 export const ProjectCardLink = styled.a`
