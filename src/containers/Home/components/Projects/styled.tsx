@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Container } from "@material-ui/core";
 
+import Loading from "src/components/Loading";
+
 export const ProjectsWrapper = styled.section`
   width: 100%;
 `;
@@ -15,4 +17,8 @@ export const ProjectsTitle = styled.h3`
   text-rendering: optimizelegibility;
   font-size: 1.62671rem;
   line-height: 1.1;
+`;
+
+export const ProjectsLoading = styled(Loading)`
+  padding: 4rem 0;
 `;

@@ -6,6 +6,7 @@ export const ProjectListWrapper = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 1.2rem;
   grid-row-gap: 1.2rem;
+  animation: appear 300ms;
 
   ${down("lg")} {
     grid-template-columns: repeat(2, 1fr);

@@ -3,7 +3,12 @@ import { useSelector } from "react-redux";
 
 import ProjectList from "src/components/ProjectList";
 import { RootState } from "src/store";
-import { ProjectsWrapper, ProjectsContainer, ProjectsTitle } from "./styled";
+import {
+  ProjectsWrapper,
+  ProjectsContainer,
+  ProjectsTitle,
+  ProjectsLoading,
+} from "./styled";
 
 const Projects: FC = () => {
   const pinnedRepositoriesState = useSelector(
@@ -14,7 +19,11 @@ const Projects: FC = () => {
     <ProjectsWrapper>
       <ProjectsContainer>
         <ProjectsTitle>Projects</ProjectsTitle>
-        <ProjectList repositories={pinnedRepositoriesState.data} />
+        {pinnedRepositoriesState.loading ? (
+          <ProjectsLoading />
+        ) : (
+          <ProjectList repositories={pinnedRepositoriesState.data} />
+        )}
       </ProjectsContainer>
     </ProjectsWrapper>
   );
