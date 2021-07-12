@@ -16,9 +16,9 @@ export const FooterContainer = styled(Container)`
 `;
 
 export const FooterLogo = styled.div`
-  color: inherit;
+  font-family: "Righteous", cursive;
   font-weight: bold;
-  font-size: 1.7rem;
+  font-size: 2rem;
   margin-bottom: 1.5rem;
 
   ${down("sm")} {

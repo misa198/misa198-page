@@ -12,17 +12,15 @@ export const HeaderWrapper = styled.header`
 export const HeaderContainer = styled(Container)`
   display: flex !important;
   justify-content: space-between;
+  align-items: center;
   padding: 1.5rem 0;
 `;
 
 export const HeaderLogo = styled.div`
-  transition: color 300ms;
+  font-family: "Righteous", cursive;
+  font-size: 2rem;
   cursor: pointer;
   user-select: none;
-
-  &:hover {
-    color: ${(props) => props.theme.colorPrimary};
-  }
 `;
 
 export const HeaderBurger = styled(Menu)`
