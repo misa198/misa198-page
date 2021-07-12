@@ -55,4 +55,9 @@ export const FooterBackLink = styled.a`
   height: fit-content;
   margin-left: 1.2rem;
   color: ${(props) => props.theme.colorPrimary};
+
+  ${down("sm")} {
+    margin-left: 0;
+    margin: 0 0.6rem;
+  }
 `;
