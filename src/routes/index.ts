@@ -14,6 +14,12 @@ const routes: Route[] = [
     exact: true,
     component: lazy(() => import("src/containers/Home")),
   },
+  {
+    name: "portfolio",
+    path: "/portfolio",
+    exact: true,
+    component: lazy(() => import("src/containers/Portfolio")),
+  },
 ];
 
 export default routes;
