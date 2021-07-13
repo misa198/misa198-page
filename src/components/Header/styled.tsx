@@ -5,7 +5,7 @@ import { down } from "styled-breakpoints";
 
 export const HeaderWrapper = styled.header`
   width: 100%;
-  /* position: relative; */
+  position: relative;
   z-index: 2;
 `;
 
