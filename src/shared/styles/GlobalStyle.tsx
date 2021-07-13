@@ -22,6 +22,10 @@ export default createGlobalStyle<{
     text-decoration: none;
   }
 
+  .Toastify__toast--success {
+    background: ${(props) => props.theme.colorPrimary}
+  }
+
   ::-webkit-scrollbar {
     width: 5px;
   }
