@@ -1,5 +1,7 @@
 import { FC, useState } from "react";
 import { Link } from "react-router-dom";
+import ScrollLock from "react-scrolllock";
+import { useWindowWidth } from "@react-hook/window-size";
 
 import {
   HeaderWrapper,
@@ -15,13 +17,16 @@ import {
 
 const Header: FC = () => {
   const [isShowMenu, setIsShowMenu] = useState<boolean>(false);
+  const windowWidth = useWindowWidth();
 
   function switchMenuStatus() {
+    if (!isShowMenu) window.scrollTo(0, 0);
     setIsShowMenu(!isShowMenu);
   }
 
   return (
     <HeaderWrapper>
+      <ScrollLock isActive={isShowMenu && windowWidth < 768} />
       <HeaderContainer>
         <Link to="/">
           <HeaderLogo>Misa198</HeaderLogo>
