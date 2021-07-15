@@ -1,5 +1,5 @@
 import { FC, Suspense } from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -14,9 +14,11 @@ const App: FC = () => {
       <AppWrapper>
         <Header />
         <Main>
-          {routes.map((route) => (
-            <Route {...route} key={route.name} />
-          ))}
+          <Switch>
+            {routes.map((route) => (
+              <Route {...route} key={route.name} />
+            ))}
+          </Switch>
         </Main>
         <Footer />
         <ToastContainer />
