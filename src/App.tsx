@@ -4,26 +4,27 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { Main, AppWrapper } from "src/styled";
+import Loading from "src/components/Loading";
 import Header from "src/components/Header";
 import Footer from "src/components/Footer";
 import routes from "src/routes";
 
 const App: FC = () => {
   return (
-    <Suspense fallback={<>Loading...</>}>
-      <AppWrapper>
-        <Header />
-        <Main>
+    <AppWrapper>
+      <Header />
+      <Main>
+        <Suspense fallback={<Loading />}>
           <Switch>
             {routes.map((route) => (
               <Route {...route} key={route.name} />
             ))}
           </Switch>
-        </Main>
-        <Footer />
-        <ToastContainer />
-      </AppWrapper>
-    </Suspense>
+        </Suspense>
+      </Main>
+      <Footer />
+      <ToastContainer />
+    </AppWrapper>
   );
 };
 
