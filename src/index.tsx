@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "@material-ui/core";
 import { ThemeProvider as SPThemeProvider } from "styled-components";
@@ -17,11 +17,11 @@ ReactDOM.render(
     <ThemeProvider theme={theme}>
       <SPThemeProvider theme={spTheme}>
         <GlobalStyle />
-        <HashRouter>
+        <BrowserRouter>
           <Provider store={store}>
             <App />
           </Provider>
-        </HashRouter>
+        </BrowserRouter>
       </SPThemeProvider>
     </ThemeProvider>
   </React.StrictMode>,
