@@ -1,6 +1,7 @@
 import { Blog } from "types/Blog";
 
 export const blog: Blog = {
+  id: "demo-id",
   slug: "this-is-demo-blog",
   title: "This is demo title",
   author: "Misa198",

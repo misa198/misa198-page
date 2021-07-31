@@ -4,7 +4,7 @@ import Head from "next/head";
 
 import { BlogContainer } from "styles/pages/blog.style";
 import BlogIntroduce from "components/Pages/Blog/Introduce";
-import { blog } from "./data";
+import { blog } from "../../../data";
 
 const BlogContent = dynamic(() => import("components/Pages/Blog/Content"), {
   ssr: false,
@@ -18,6 +18,32 @@ const Blog: FC = () => {
     <>
       <Head>
         <title>{blog.seo.title} - Misa198</title>
+        {/* Primary Meta Tags */}
+        <meta name="title" content={`${blog.seo.title} - Misa198`} />
+        <meta name="description" content={blog.seo.description} />
+        {/* Open Graph / Facebook */}
+        <meta
+          property="og:url"
+          content={`https://misa198.web.app/blogs/${blog.slug}`}
+        />
+        <meta property="og:title" content={`${blog.seo.title} - Misa198`} />
+        <meta
+          property="og:description"
+          content={`https://misa198.web.app/blogs/${blog.slug}`}
+        />
+        <meta property="og:image" content={blog.seo.image} />
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content={`https://misa198.web.app/blogs/${blog.slug}`}
+        />
+        <meta
+          property="twitter:title"
+          content={`${blog.seo.title} - Misa198`}
+        />
+        <meta property="twitter:description" content={blog.seo.description} />
+        <meta property="twitter:image" content={blog.seo.image} />
       </Head>
       <div id="fb-root" />
       <script
@@ -30,7 +56,7 @@ const Blog: FC = () => {
       <BlogContainer>
         <BlogIntroduce blog={blog} />
         <BlogContent content={blog.content} />
-        <BlogComments url="https://developers.facebook.com/docs/plugins/comments#configurator" />
+        <BlogComments url={`https://misa198.web.app/blogs/${blog.id}`} />
       </BlogContainer>
     </>
   );

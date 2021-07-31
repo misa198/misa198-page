@@ -25,7 +25,7 @@ const BlogComments: FC<PropTypes> = ({ url }) => {
       <div
         className="fb-comments"
         data-href={url}
-        data-numposts="10"
+        data-numposts="5"
         data-width="100%"
       />
     </BlogCommentsWrapper>
