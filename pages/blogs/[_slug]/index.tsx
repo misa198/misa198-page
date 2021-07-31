@@ -1,6 +1,7 @@
-import { FC } from "react";
+import { useEffect, FC } from "react";
 import dynamic from "next/dynamic";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 import { BlogContainer } from "styles/pages/blog.style";
 
@@ -8,7 +9,14 @@ const BlogComments = dynamic(() => import("components/Pages/Blog/Comments"), {
   ssr: false,
 });
 
+declare const window: any;
 const Blog: FC = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    window.FB.XFBML.parse();
+  }, [router.pathname]);
+
   return (
     <>
       <Head>
