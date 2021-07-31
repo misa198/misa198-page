@@ -3,6 +3,10 @@
 # OS
 .DS_Store
 
+# firebase
+.firebase
+firebase-debug.log
+
 # dependencies
 /node_modules
 /.pnp
