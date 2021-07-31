@@ -13,3 +13,9 @@ export const BlogIntroduceTitle = styled.h2`
   word-break: break-word;
   font-size: 2.5rem;
 `;
+
+export const BlogIntroduceMeta = styled.div`
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: ${(props) => props.theme.colorBlack07};
+`;
