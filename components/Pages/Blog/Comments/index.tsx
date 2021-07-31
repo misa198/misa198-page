@@ -1,6 +1,8 @@
 import { useEffect, FC } from "react";
 import { useRouter } from "next/router";
 
+import { BlogCommentsWrapper, BlogCommentsTitle } from "./styled";
+
 interface PropTypes {
   url: string;
 }
@@ -18,12 +20,15 @@ const BlogComments: FC<PropTypes> = ({ url }) => {
   }, [router.pathname]);
 
   return (
-    <div
-      className="fb-comments"
-      data-href={url}
-      data-numposts="10"
-      data-width="100%"
-    />
+    <BlogCommentsWrapper>
+      <BlogCommentsTitle>Comments</BlogCommentsTitle>
+      <div
+        className="fb-comments"
+        data-href={url}
+        data-numposts="10"
+        data-width="100%"
+      />
+    </BlogCommentsWrapper>
   );
 };
 

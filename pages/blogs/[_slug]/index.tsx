@@ -4,9 +4,11 @@ import Head from "next/head";
 
 import { BlogContainer } from "styles/pages/blog.style";
 import BlogIntroduce from "components/Pages/Blog/Introduce";
-import BlogContent from "components/Pages/Blog/Content";
 import { blog } from "./data";
 
+const BlogContent = dynamic(() => import("components/Pages/Blog/Content"), {
+  ssr: false,
+});
 const BlogComments = dynamic(() => import("components/Pages/Blog/Comments"), {
   ssr: false,
 });
