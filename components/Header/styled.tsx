@@ -9,9 +9,8 @@ export const HeaderWrapper = styled.header<{ route: string }>`
   z-index: 2;
   ${(props) =>
     ["blogs", "blog"].includes(props.route)
-      ? `border-bottom: 1px solid ${props.theme.colorBlack005};`
+      ? `border-bottom: ${props.theme.colorBlack005} 1px solid;`
       : ""};
-  transition: all 200ms;
 `;
 
 export const HeaderContainer = styled(Container)`
