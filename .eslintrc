@@ -40,6 +40,7 @@
     "import/extensions": "off",
     "import/first": "off",
     "no-param-reassign": "off",
+    "no-underscore-dangle": "off",
     "linebreak-style": "off",
     "import/prefer-default-export": "off",
     "react/react-in-jsx-scope": "off",

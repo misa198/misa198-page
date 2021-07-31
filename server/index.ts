@@ -8,6 +8,7 @@ import express, { Request, Response } from "express";
 import next from "next";
 import helmet from "helmet";
 
+import blogsRoute from "./routes/blogs.route";
 import { connectDb } from "./database";
 
 const dev = process.env.NODE_ENV !== "production";
@@ -25,6 +26,8 @@ const port = process.env.PORT || 3000;
         contentSecurityPolicy: false,
       }),
     );
+
+    server.use("/api/blogs", blogsRoute);
 
     server.all("*", (req: Request, res: Response) => {
       return handle(req, res);

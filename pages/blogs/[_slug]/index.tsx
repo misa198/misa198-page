@@ -56,7 +56,7 @@ const Blog: FC = () => {
       <BlogContainer>
         <BlogIntroduce blog={blog} />
         <BlogContent content={blog.content} />
-        <BlogComments url={`https://misa198.web.app/blogs/${blog.id}`} />
+        <BlogComments url={`https://misa198.web.app/blogs/${blog._id}`} />
       </BlogContainer>
     </>
   );
