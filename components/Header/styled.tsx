@@ -9,7 +9,7 @@ export const HeaderWrapper = styled.header<{ route: string }>`
   z-index: 2;
   ${(props) =>
     ["blogs", "blog"].includes(props.route)
-      ? `box-shadow: 0 2px 4px 0 rgb(0 0 0 / 7%);`
+      ? `border-bottom: 1px solid ${props.theme.colorBlack005};`
       : ""};
   transition: all 200ms;
 `;
