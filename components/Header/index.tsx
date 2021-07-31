@@ -54,13 +54,9 @@ const Header: FC = () => {
             </Link>
           </HeaderNavLink>
           <HeaderNavLink>
-            <a
-              href="https://viblo.asia/u/misa198"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Blogs
-            </a>
+            <Link href="/blogs">
+              <a onClick={switchMenuStatus}>Blogs</a>
+            </Link>
           </HeaderNavLink>
         </HeaderNavLinks>
       </HeaderContainer>
