@@ -1,7 +1,10 @@
 import { FC } from "react";
 import Head from "next/head";
 
-import { PortfolioWrapper, PortfolioContainer } from "styles/pages/home.style";
+import {
+  PortfolioWrapper,
+  PortfolioContainer,
+} from "styles/pages/portfolio.style";
 
 const Portfolio: FC = () => {
   return (
