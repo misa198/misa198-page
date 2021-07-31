@@ -3,10 +3,15 @@ import { Container } from "@material-ui/core";
 import { Menu, X } from "react-feather";
 import { down } from "styled-breakpoints";
 
-export const HeaderWrapper = styled.header`
+export const HeaderWrapper = styled.header<{ route: string }>`
   width: 100%;
   position: relative;
   z-index: 2;
+  ${(props) =>
+    ["blogs", "blog"].includes(props.route)
+      ? `box-shadow: 0 2px 4px 0 rgb(0 0 0 / 7%);`
+      : ""};
+  transition: all 200ms;
 `;
 
 export const HeaderContainer = styled(Container)`

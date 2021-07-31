@@ -1,5 +1,6 @@
-import { FC, useState } from "react";
+import { useState, useMemo, FC } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import ScrollLock from "react-scrolllock";
 import { useWindowWidth } from "@react-hook/window-size";
 
@@ -18,6 +19,8 @@ import {
 const Header: FC = () => {
   const [isShowMenu, setIsShowMenu] = useState<boolean>(false);
   const windowWidth = useWindowWidth();
+  const router = useRouter();
+  const route = useMemo(() => router.pathname.split("/")[1], [router.pathname]);
 
   function switchMenuStatus() {
     if (!isShowMenu) window.scrollTo(0, 0);
@@ -25,7 +28,7 @@ const Header: FC = () => {
   }
 
   return (
-    <HeaderWrapper>
+    <HeaderWrapper route={route}>
       <ScrollLock isActive={isShowMenu && windowWidth < 768} />
       <HeaderContainer>
         <Link href="/">

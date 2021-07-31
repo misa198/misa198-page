@@ -3,6 +3,9 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 
 import { BlogContainer } from "styles/pages/blog.style";
+import BlogIntroduce from "components/Pages/Blog/Introduce";
+import BlogContent from "components/Pages/Blog/Content";
+import { blog } from "./data";
 
 const BlogComments = dynamic(() => import("components/Pages/Blog/Comments"), {
   ssr: false,
@@ -12,7 +15,7 @@ const Blog: FC = () => {
   return (
     <>
       <Head>
-        <title>Blogs - Misa198</title>
+        <title>{blog.seo.title} - Misa198</title>
       </Head>
       <div id="fb-root" />
       <script
@@ -23,6 +26,8 @@ const Blog: FC = () => {
         nonce="meItQUWC"
       />
       <BlogContainer>
+        <BlogIntroduce blog={blog} />
+        <BlogContent content={blog.content} />
         <BlogComments url="https://developers.facebook.com/docs/plugins/comments#configurator" />
       </BlogContainer>
     </>
