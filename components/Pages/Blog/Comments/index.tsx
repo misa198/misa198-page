@@ -16,7 +16,7 @@ const BlogComments: FC<PropTypes> = ({ url }) => {
   const router = useRouter();
 
   useEffect(() => {
-    window.FB.XFBML.parse();
+    if (window) window.FB.XFBML.parse();
   }, [router.pathname]);
 
   return (
