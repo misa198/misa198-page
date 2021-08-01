@@ -46,7 +46,6 @@ const Blogs: FC = () => {
   }
 
   useEffect(() => {
-    console.log(router.query);
     const page = (router.query.page || "1") as string;
     let _page = 0;
     try {
