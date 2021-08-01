@@ -5,7 +5,7 @@ export const SearchFormWrapper = styled.div``;
 export const SearchFormContainer = styled.form`
   margin: auto;
   margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
   height: 3rem;
   border-radius: 0.5rem;
   border: 1px solid ${(props) => props.theme.colorBlack01};

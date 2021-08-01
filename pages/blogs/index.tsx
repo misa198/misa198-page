@@ -3,7 +3,11 @@ import Head from "next/head";
 
 import SearchFrom from "components/Pages/Blogs/SearchForm";
 import BlogList from "components/Pages/Blogs/BlogList";
-import { BlogsContainer } from "styles/pages/blogs.style";
+import Pagination from "components/Pagination";
+import {
+  BlogsContainer,
+  BlogsPaginationWrapper,
+} from "styles/pages/blogs.style";
 
 const Blogs: FC = () => {
   return (
@@ -14,6 +18,9 @@ const Blogs: FC = () => {
       <BlogsContainer>
         <SearchFrom />
         <BlogList />
+        <BlogsPaginationWrapper>
+          <Pagination />
+        </BlogsPaginationWrapper>
       </BlogsContainer>
     </>
   );

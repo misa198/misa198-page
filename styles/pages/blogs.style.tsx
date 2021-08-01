@@ -6,3 +6,10 @@ export const BlogsContainer = styled(Container)`
   max-width: 992px !important;
   padding: 0 1rem;
 `;
+
+export const BlogsPaginationWrapper = styled.div`
+  width: 100%;
+  display: flex !important;
+  justify-content: center !important;
+  margin-top: 3rem;
+`;
