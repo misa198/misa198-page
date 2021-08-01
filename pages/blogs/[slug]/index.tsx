@@ -8,6 +8,7 @@ import { BlogContainer } from "styles/pages/blog.style";
 import BlogIntroduce from "components/Pages/Blog/Introduce";
 import { Blog as IBlog } from "types/Blog";
 import { getBlog } from "services/blogs-api.service";
+import { domain } from "constants/config";
 
 const BlogContent = dynamic(() => import("components/Pages/Blog/Content"), {
   ssr: false,
@@ -42,22 +43,16 @@ const Blog: FC<InferGetServerSidePropsType<GetServerSideProps<PropTypes>>> = ({
         <meta name="title" content={`${blog.seo.title} - Misa198`} />
         <meta name="description" content={blog.seo.description} />
         {/* Open Graph / Facebook */}
-        <meta
-          property="og:url"
-          content={`https://misa198.web.app/blogs/${blog.slug}`}
-        />
+        <meta property="og:url" content={`${domain}/blogs/${blog.slug}`} />
         <meta property="og:title" content={`${blog.seo.title} - Misa198`} />
         <meta
           property="og:description"
-          content={`https://misa198.web.app/blogs/${blog.slug}`}
+          content={`${domain}/blogs/${blog.slug}`}
         />
         <meta property="og:image" content={blog.seo.image} />
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:url"
-          content={`https://misa198.web.app/blogs/${blog.slug}`}
-        />
+        <meta property="twitter:url" content={`${domain}/blogs/${blog.slug}`} />
         <meta
           property="twitter:title"
           content={`${blog.seo.title} - Misa198`}
@@ -76,7 +71,7 @@ const Blog: FC<InferGetServerSidePropsType<GetServerSideProps<PropTypes>>> = ({
       <BlogContainer>
         <BlogIntroduce blog={blog} />
         <BlogContent content={blog.content} />
-        <BlogComments url={`https://misa198.web.app/blogs/${blog._id}`} />
+        <BlogComments url={`${domain}/blogs/${blog.slug}`} />
       </BlogContainer>
     </>
   );

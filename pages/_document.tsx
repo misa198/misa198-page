@@ -4,6 +4,7 @@ import { ServerStyleSheets } from "@material-ui/core";
 import { ServerStyleSheet } from "styled-components";
 
 import theme from "themes/material-theme";
+import { domain } from "constants/config";
 
 export default class MyDocument extends Document {
   render(): JSX.Element {
@@ -22,7 +23,7 @@ export default class MyDocument extends Document {
           />
           {/* Open Graph / Facebook */}
           <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://misa198.web.app/" />
+          <meta property="og:url" content={domain} />
           <meta property="og:title" content="Misa198" />
           <meta
             property="og:description"
@@ -34,7 +35,7 @@ export default class MyDocument extends Document {
           />
           {/* Twitter */}
           <meta property="twitter:card" content="summary_large_image" />
-          <meta property="twitter:url" content="https://misa198.web.app/" />
+          <meta property="twitter:url" content={domain} />
           <meta property="twitter:title" content="Misa198" />
           <meta
             property="twitter:description"
@@ -55,7 +56,7 @@ export default class MyDocument extends Document {
           {/* Global site tag (gtag.js) - Google Analytics */}
           <script
             async
-            src="https://www.googletagmanager.com/gtag/js?id=G-TW3SCPQ4RJ"
+            src="https://www.googletagmanager.com/gtag/js?id=G-W91BQ70TPE"
           />
           <script
             // eslint-disable-next-line react/no-danger
@@ -65,7 +66,7 @@ export default class MyDocument extends Document {
                 dataLayer.push(arguments);
               }
               gtag("js", new Date());
-              gtag("config", "G-TW3SCPQ4RJ");`,
+              gtag('config', 'G-W91BQ70TPE');`,
             }}
           />
         </Head>
