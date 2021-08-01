@@ -18,6 +18,6 @@ export interface Blog {
 }
 
 export interface GetBlogsResponse {
-  blogs: Blog[];
+  data: Blog[];
   meta: PaginationMeta;
 }

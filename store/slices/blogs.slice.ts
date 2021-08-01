@@ -36,7 +36,7 @@ const slice = createSlice({
       state.blogs.error = false;
     });
     builder.addCase(fetchBlogs.fulfilled, (state, action) => {
-      state.blogs.data = action.payload.blogs;
+      state.blogs.data = action.payload.data;
       state.blogs.meta = action.payload.meta;
       state.blogs.loading = false;
     });
