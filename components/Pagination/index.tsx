@@ -12,7 +12,7 @@ const Pagination: FC<PropTypes> = ({ page, totalPages, onChange }) => {
   return (
     <PaginationWrapper
       count={totalPages}
-      page={page}
+      page={page ?? 1}
       variant="outlined"
       shape="rounded"
       color="primary"

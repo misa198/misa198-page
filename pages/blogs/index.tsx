@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useEffect, useState } from "react";
+import { ChangeEvent, FC, FormEvent, useEffect, useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
@@ -17,27 +17,50 @@ const Blogs: FC = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(undefined);
+  const [keyword, setKeyWord] = useState("");
   const blogsState = useSelector((state: RootState) => state.blogs.blogs);
 
   function onPageChange(_e: ChangeEvent<unknown>, page: number) {
-    setCurrentPage(page);
+    router.push({
+      pathname: router.pathname,
+      query: {
+        ...router.query,
+        page,
+      },
+    });
+  }
+
+  function onKeyChange(e: ChangeEvent<HTMLInputElement>) {
+    setKeyWord(e.target.value);
+  }
+
+  function onSubmitSearchForm(e: FormEvent) {
+    e.preventDefault();
+    router.push({
+      pathname: router.pathname,
+      query: {
+        key: keyword,
+        page: 1,
+      },
+    });
   }
 
   useEffect(() => {
     const page = (router.query.page || "1") as string;
+    let _page = 0;
     try {
-      const _page = parseInt(page, 10);
+      _page = parseInt(page, 10);
       setCurrentPage(_page);
     } catch (e) {
       router.push("/blogs");
     }
-  }, [router, router.asPath]);
 
-  useEffect(() => {
-    if (currentPage) {
-      dispatch(fetchBlogs({ page: currentPage }));
-    }
-  }, [currentPage, dispatch]);
+    const queryKeyword = (router.query.key || "") as string;
+    setKeyWord(queryKeyword);
+
+    dispatch(fetchBlogs({ page: _page, key: keyword }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch, router, router.query]);
 
   return (
     <>
@@ -45,16 +68,18 @@ const Blogs: FC = () => {
         <title>Blogs - Misa198</title>
       </Head>
       <BlogsContainer>
-        <SearchFrom />
+        <SearchFrom
+          keyword={keyword}
+          onChange={onKeyChange}
+          onSubmit={onSubmitSearchForm}
+        />
         <BlogList blogs={blogsState.data} />
         <BlogsPaginationWrapper>
-          {blogsState.data.length > 0 && (
-            <Pagination
-              onChange={onPageChange}
-              page={currentPage}
-              totalPages={blogsState.meta.totalPages}
-            />
-          )}
+          <Pagination
+            onChange={onPageChange}
+            page={currentPage}
+            totalPages={10}
+          />
         </BlogsPaginationWrapper>
       </BlogsContainer>
     </>
