@@ -30,7 +30,7 @@
     "joi": "^17.4.1",
     "mongoose": "^5.13.5",
     "next": "11.0.1",
-    "nextjs-progressbar": "^0.0.11",
+    "nextjs-progressbar": "^0.0.8",
     "nodemon": "^2.0.12",
     "prismjs": "^1.24.1",
     "query-string": "^7.0.1",
