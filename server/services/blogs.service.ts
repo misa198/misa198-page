@@ -17,7 +17,7 @@ const getBlogs = async (query: GetBlogsDto): Promise<[IBlog[], number]> => {
   }
 
   const dbQuery = {
-    $or: [{ title: { $regex: key, $options: "i" } }, { tags: key }],
+    $or: [{ title: { $regex: new RegExp(key, "i") } }, { tags: key }],
   };
   const total = await Blog.countDocuments(dbQuery);
   const totalPages = Math.ceil(total / maxPageSize);
