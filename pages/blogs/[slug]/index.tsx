@@ -1,8 +1,7 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import dynamic from "next/dynamic";
 import Head from "next/head";
-// import { useRouter } from "next/router";
 
 import { BlogContainer } from "styles/pages/blog.style";
 import BlogIntroduce from "components/Pages/Blog/Introduce";
@@ -21,20 +20,9 @@ interface PropTypes {
   blog: IBlog;
 }
 
-declare const window: Window &
-  typeof globalThis & {
-    FB: any;
-  };
-
 const Blog: FC<InferGetServerSidePropsType<GetServerSideProps<PropTypes>>> = ({
   blog,
 }) => {
-  // const router = useRouter();
-
-  useEffect(() => {
-    if (window.FB) window.FB.XFBML.parse();
-  });
-
   return (
     <>
       <Head>
