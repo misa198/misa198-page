@@ -27,6 +27,7 @@ const BlogComments: FC<PropTypes> = ({ url }) => {
         data-href={url}
         data-numposts="5"
         data-width="100%"
+        data-order-by="reverse_time"
       />
     </BlogCommentsWrapper>
   );

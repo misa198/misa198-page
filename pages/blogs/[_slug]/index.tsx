@@ -50,7 +50,7 @@ const Blog: FC = () => {
         async
         defer
         crossOrigin="anonymous"
-        src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0"
         nonce="meItQUWC"
       />
       <BlogContainer>
