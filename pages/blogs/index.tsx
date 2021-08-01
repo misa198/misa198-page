@@ -74,8 +74,11 @@ const Blogs: FC = () => {
           onChange={onKeyChange}
           onSubmit={onSubmitSearchForm}
         />
-        <BlogListLoading />
-        {/* <BlogList blogs={blogsState.data} /> */}
+        {blogsState.loading ? (
+          <BlogListLoading />
+        ) : (
+          <BlogList blogs={blogsState.data} />
+        )}
         <BlogsPaginationWrapper>
           <Pagination
             onChange={onPageChange}
