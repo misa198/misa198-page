@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import SearchFrom from "components/Pages/Blogs/SearchForm";
 import BlogList from "components/Pages/Blogs/BlogList";
+import BlogListLoading from "components/Pages/Blogs/BlogListLoading";
 import Pagination from "components/Pagination";
 import {
   BlogsContainer,
@@ -73,7 +74,8 @@ const Blogs: FC = () => {
           onChange={onKeyChange}
           onSubmit={onSubmitSearchForm}
         />
-        <BlogList blogs={blogsState.data} />
+        <BlogListLoading />
+        {/* <BlogList blogs={blogsState.data} /> */}
         <BlogsPaginationWrapper>
           <Pagination
             onChange={onPageChange}
