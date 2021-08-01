@@ -78,7 +78,7 @@ const Blogs: FC = () => {
           <Pagination
             onChange={onPageChange}
             page={currentPage}
-            totalPages={10}
+            totalPages={blogsState.meta.totalPages}
           />
         </BlogsPaginationWrapper>
       </BlogsContainer>
