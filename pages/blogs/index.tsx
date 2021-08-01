@@ -46,6 +46,7 @@ const Blogs: FC = () => {
   }
 
   useEffect(() => {
+    console.log(router.query);
     const page = (router.query.page || "1") as string;
     let _page = 0;
     try {
@@ -58,7 +59,7 @@ const Blogs: FC = () => {
     const queryKeyword = (router.query.key || "") as string;
     setKeyWord(queryKeyword);
 
-    dispatch(fetchBlogs({ page: _page, key: keyword }));
+    dispatch(fetchBlogs({ page: _page, key: queryKeyword }));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch, router, router.query]);
 
