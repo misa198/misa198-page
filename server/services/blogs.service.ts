@@ -28,4 +28,9 @@ const getBlogs = async (query: GetBlogsDto): Promise<[IBlog[], number]> => {
   return [blogs, totalPages];
 };
 
-export default { getBlogs };
+const getBlog = async (slug: string): Promise<IBlog> => {
+  const blog = await Blog.findOne({ slug });
+  return blog;
+};
+
+export default { getBlogs, getBlog };

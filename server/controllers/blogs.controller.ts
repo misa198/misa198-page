@@ -19,4 +19,15 @@ const getBlogs = async (req: Request, res: Response): Promise<Response> => {
   }
 };
 
-export default { getBlogs };
+const getBlog = async (req: Request, res: Response): Promise<Response> => {
+  const path = req.params.slug;
+  try {
+    const blog = await service.getBlog(path);
+    if (blog) return res.send(blog);
+    return res.status(404).send({ message: "Not found" });
+  } catch (e) {
+    return res.status(400).send({ message: "Bad request" });
+  }
+};
+
+export default { getBlogs, getBlog };
