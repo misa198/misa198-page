@@ -1,7 +1,13 @@
 import { config } from "dotenv";
+import herokuAwake from "heroku-awake";
+
+// eslint-disable-next-line import/order
+import { domain } from "../constants/config";
 
 if (process.env.NODE_ENV !== "production") {
   config();
+} else {
+  herokuAwake(domain);
 }
 
 import express, { Request, Response } from "express";
