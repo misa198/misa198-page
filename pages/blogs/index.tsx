@@ -13,6 +13,7 @@ import {
 } from "styles/pages/blogs.style";
 import { fetchBlogs } from "store/thunks/blogs.thunk";
 import { RootState } from "store";
+import { domain } from "constants/config";
 
 const Blogs: FC = () => {
   const dispatch = useDispatch();
@@ -67,6 +68,35 @@ const Blogs: FC = () => {
     <>
       <Head>
         <title>Blogs - Misa198</title>
+        {/* Primary Meta Tags */}
+        <meta name="title" content="Blogs - Misa198" />
+        <meta
+          name="description"
+          content="I am a web developer. Looking forward to working with you."
+        />
+        {/* Open Graph / Facebook */}
+        <meta property="og:url" content={`${domain}/blogs`} />
+        <meta property="og:title" content="Blogs - Misa198" />
+        <meta
+          property="og:description"
+          content="I am a web developer. Looking forward to working with you."
+        />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dumfvnj9f/image/upload/v1626761198/misa198/facebook-og_rzhdqd.png"
+        />
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={`${domain}/blogs`} />
+        <meta property="twitter:title" content="Blogs - Misa198" />
+        <meta
+          property="twitter:description"
+          content="I am a web developer. Looking forward to working with you."
+        />
+        <meta
+          property="twitter:image"
+          content="https://res.cloudinary.com/dumfvnj9f/image/upload/v1626761198/misa198/facebook-og_rzhdqd.png"
+        />
       </Head>
       <BlogsContainer>
         <SearchFrom
