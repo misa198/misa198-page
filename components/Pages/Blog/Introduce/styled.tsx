@@ -18,6 +18,7 @@ export const BlogIntroduceContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 1rem;
 `;
 
 export const BlogIntroduceMeta = styled.div`
