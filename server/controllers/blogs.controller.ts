@@ -1,15 +1,19 @@
 import { Request, Response } from "express";
 
-import { Blog } from "types/Blog";
+import { GetBlogsDto } from "server/dtos/blogs/get-blogs.dto";
 import service from "../services/blogs.service";
 
-const getBlogs = async (
-  _req: Request,
-  res: Response,
-): Promise<Response<Blog[], Record<string, any>>> => {
+const getBlogs = async (req: Request, res: Response): Promise<Response> => {
+  const query = req.query as unknown as GetBlogsDto;
   try {
-    const blogs = await service.getBlogs({ page: 1 });
-    return res.send(blogs);
+    const [blogs, totalPages] = await service.getBlogs(query);
+    return res.send({
+      data: blogs,
+      meta: {
+        page: query.page,
+        totalPage: totalPages,
+      },
+    });
   } catch (e) {
     return res.status(400).send({ message: "Bad request" });
   }
