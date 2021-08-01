@@ -4,6 +4,9 @@
   "license": "MIT",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "14.17.3"
+  },
   "scripts": {
     "dev": "nodemon",
     "build:server": "tsc --project tsconfig.server.json",
