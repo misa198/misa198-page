@@ -1,3 +1,5 @@
+import { PaginationMeta } from "./Pagination";
+
 export interface Blog {
   _id: string;
   slug: string;
@@ -13,4 +15,9 @@ export interface Blog {
     description: string;
     image: string;
   };
+}
+
+export interface GetBlogsResponse {
+  blogs: Blog[];
+  meta: PaginationMeta;
 }
