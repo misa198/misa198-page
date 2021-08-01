@@ -28,11 +28,11 @@ const port = process.env.PORT || 3000;
     await app.prepare();
     await connectDb();
     const server = express();
-    server.use(
-      helmet({
-        contentSecurityPolicy: false,
-      }),
-    );
+    // server.use(
+    //   helmet({
+    //     contentSecurityPolicy: false,
+    //   }),
+    // );
 
     server.use("/api/blogs", blogsRoute);
 
