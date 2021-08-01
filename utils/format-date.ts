@@ -1,3 +1,5 @@
 export function formatDate(date: Date): string {
-  return `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
+  return `${new Date(date).toLocaleDateString()} ${new Date(
+    date,
+  ).toLocaleTimeString()}`;
 }

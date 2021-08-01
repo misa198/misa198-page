@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import SearchFrom from "components/Pages/Blogs/SearchForm";
 import BlogList from "components/Pages/Blogs/BlogList";
@@ -11,11 +11,13 @@ import {
   BlogsPaginationWrapper,
 } from "styles/pages/blogs.style";
 import { fetchBlogs } from "store/thunks/blogs.thunk";
+import { RootState } from "store";
 
 const Blogs: FC = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(undefined);
+  const blogsState = useSelector((state: RootState) => state.blogs.blogs);
 
   useEffect(() => {
     const page = (router.query.page || "1") as string;
@@ -40,7 +42,7 @@ const Blogs: FC = () => {
       </Head>
       <BlogsContainer>
         <SearchFrom />
-        <BlogList />
+        <BlogList blogs={blogsState.data} />
         <BlogsPaginationWrapper>
           <Pagination />
         </BlogsPaginationWrapper>
