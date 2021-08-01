@@ -1,10 +1,12 @@
 import { FC } from "react";
+import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 
 import { BlogContainer } from "styles/pages/blog.style";
 import BlogIntroduce from "components/Pages/Blog/Introduce";
-import { blog } from "../../../data";
+import { Blog as IBlog } from "types/Blog";
+import { getBlog } from "services/blogs-api.service";
 
 const BlogContent = dynamic(() => import("components/Pages/Blog/Content"), {
   ssr: false,
@@ -13,7 +15,13 @@ const BlogComments = dynamic(() => import("components/Pages/Blog/Comments"), {
   ssr: false,
 });
 
-const Blog: FC = () => {
+interface PropTypes {
+  blog: IBlog;
+}
+
+const Blog: FC<InferGetServerSidePropsType<GetServerSideProps<PropTypes>>> = ({
+  blog,
+}) => {
   return (
     <>
       <Head>
@@ -61,4 +69,22 @@ const Blog: FC = () => {
     </>
   );
 };
+
+export const getServerSideProps: GetServerSideProps<PropTypes> = async ({
+  resolvedUrl,
+}) => {
+  const slug = resolvedUrl.split("/")[2];
+  if (slug) {
+    try {
+      const response = await getBlog(slug);
+      if (response.data) {
+        return { props: { blog: response.data } };
+      }
+    } catch (e) {
+      return { notFound: true };
+    }
+  }
+  return { notFound: true };
+};
+
 export default Blog;

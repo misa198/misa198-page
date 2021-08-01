@@ -12,5 +12,5 @@ export const getBlogs = async (
 };
 
 export const getBlog = async (slug: string): Promise<AxiosResponse<Blog>> => {
-  return axios.get(`/api/blogs/${slug}`);
+  return axios.get(`http://localhost:3000/api/blogs/${slug}`);
 };
