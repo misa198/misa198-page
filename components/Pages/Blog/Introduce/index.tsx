@@ -1,11 +1,17 @@
 import { FC, useMemo } from "react";
+import { FacebookShareButton, TwitterShareButton } from "react-share";
+import { Facebook, Twitter } from "react-feather";
 
 import { Blog } from "types/Blog";
 import { formatDate } from "utils/format-date";
+import { domain } from "constants/config";
 import {
   BlogIntroduceWrapper,
   BlogIntroduceTitle,
   BlogIntroduceMeta,
+  BlogIntroduceContent,
+  BlogIntroduceShare,
+  BlogIntroduceShareButton,
 } from "./styled";
 
 interface PropTypes {
@@ -21,7 +27,21 @@ const BlogIntroduce: FC<PropTypes> = ({ blog }) => {
   return (
     <BlogIntroduceWrapper>
       <BlogIntroduceTitle>{blog.title}</BlogIntroduceTitle>
-      <BlogIntroduceMeta>{`${blog.author} • ${formattedDate}`}</BlogIntroduceMeta>
+      <BlogIntroduceContent>
+        <BlogIntroduceMeta>{`${blog.author} • ${formattedDate}`}</BlogIntroduceMeta>
+        <BlogIntroduceShare>
+          <FacebookShareButton url={`${domain}/blogs/${blog.slug}`}>
+            <BlogIntroduceShareButton>
+              <Facebook />
+            </BlogIntroduceShareButton>
+          </FacebookShareButton>
+          <TwitterShareButton url={`${domain}/blogs/${blog.slug}`}>
+            <BlogIntroduceShareButton>
+              <Twitter />
+            </BlogIntroduceShareButton>
+          </TwitterShareButton>
+        </BlogIntroduceShare>
+      </BlogIntroduceContent>
     </BlogIntroduceWrapper>
   );
 };
