@@ -73,7 +73,7 @@ export const getServerSideProps: GetServerSideProps<PropTypes> = async ({
         return { props: { blog: response.data } };
       }
     } catch (e) {
-      return { notFound: true };
+      // return { notFound: true };
     }
   }
   return { notFound: true };
