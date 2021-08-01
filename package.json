@@ -27,6 +27,7 @@
     "helmet": "^4.6.0",
     "mongoose": "^5.13.5",
     "next": "11.0.1",
+    "nextjs-progressbar": "^0.0.11",
     "nodemon": "^2.0.12",
     "prismjs": "^1.24.1",
     "react": "17.0.2",
