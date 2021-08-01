@@ -16,7 +16,7 @@ const BlogContent: FC<PropTypes> = ({ content }) => {
 
   useEffect(() => {
     Prism.highlightAll();
-  });
+  }, [parsedContent]);
 
   return (
     <BlogContentWrapper>

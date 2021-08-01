@@ -2,6 +2,8 @@ import { FC } from "react";
 import Head from "next/head";
 
 import SearchFrom from "components/Pages/Blogs/SearchForm";
+import BlogList from "components/Pages/Blogs/BlogList";
+import { BlogsContainer } from "styles/pages/blogs.style";
 
 const Blogs: FC = () => {
   return (
@@ -9,7 +11,10 @@ const Blogs: FC = () => {
       <Head>
         <title>Blogs - Misa198</title>
       </Head>
-      <SearchFrom />
+      <BlogsContainer>
+        <SearchFrom />
+        <BlogList />
+      </BlogsContainer>
     </>
   );
 };
