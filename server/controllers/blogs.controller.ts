@@ -20,7 +20,6 @@ const getBlogs = async (req: Request, res: Response): Promise<Response> => {
 };
 
 const getBlog = async (req: Request, res: Response): Promise<Response> => {
-  console.log("Hey ===========");
   const path = req.params.slug;
   try {
     const blog = await service.getBlog(path);

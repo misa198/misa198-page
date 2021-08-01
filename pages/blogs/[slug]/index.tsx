@@ -69,8 +69,8 @@ export const getServerSideProps: GetServerSideProps<PropTypes> = async ({
   if (slug) {
     try {
       const response = await getBlog(slug);
-      if (response) {
-        return { props: { blog: response } };
+      if (response.data) {
+        return { props: { blog: response.data } };
       }
     } catch (e) {
       return { notFound: true };
