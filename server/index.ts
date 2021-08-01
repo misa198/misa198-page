@@ -8,6 +8,7 @@ if (process.env.NODE_ENV !== "production") {
   config();
 } else {
   herokuAwake(domain);
+  console.log("HRKAW ", domain);
 }
 
 import express, { Request, Response } from "express";
