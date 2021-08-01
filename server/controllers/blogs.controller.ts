@@ -7,8 +7,12 @@ const getBlogs = async (
   _req: Request,
   res: Response,
 ): Promise<Response<Blog[], Record<string, any>>> => {
-  const blogs = await service.getBlogs();
-  return res.send(blogs);
+  try {
+    const blogs = await service.getBlogs({ page: 1 });
+    return res.send(blogs);
+  } catch (e) {
+    return res.status(400).send({ message: "Bad request" });
+  }
 };
 
 export default { getBlogs };
