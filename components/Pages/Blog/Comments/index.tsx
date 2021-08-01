@@ -1,5 +1,4 @@
 import { useEffect, FC } from "react";
-import { useRouter } from "next/router";
 
 import { BlogCommentsWrapper, BlogCommentsTitle } from "./styled";
 
@@ -13,13 +12,11 @@ declare const window: Window &
   };
 
 const BlogComments: FC<PropTypes> = ({ url }) => {
-  const router = useRouter();
-
   useEffect(() => {
     if (window.FB) {
       window.FB.XFBML.parse();
     }
-  }, [router]);
+  });
 
   return (
     <BlogCommentsWrapper>
