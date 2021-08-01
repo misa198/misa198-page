@@ -4,7 +4,9 @@ import queryString from "query-string";
 import { GetBlogsDto } from "server/dtos/blogs/get-blogs.dto";
 import { Blog, GetBlogsResponse } from "types/Blog";
 
-const baseApiUrl = `${process.env.NEXT_PUBLIC_APP_DOMAIN} || ${process.env.APP_DOMAIN}/api`;
+const baseApiUrl = `${
+  process.env.NEXT_PUBLIC_APP_DOMAIN || process.env.APP_DOMAIN
+}/api`;
 
 export const getBlogs = async (
   query: GetBlogsDto,
