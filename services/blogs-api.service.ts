@@ -15,7 +15,11 @@ export const getBlogs = async (
   return axios.get(`${baseApiUrl}/blogs?${stringifiedQuery}`);
 };
 
-export const getBlog = async (slug: string): Promise<AxiosResponse<Blog>> => {
-  console.log(`${baseApiUrl}/blogs/${slug}`);
-  return axios.get(`${baseApiUrl}/blogs/${slug}`);
+export const getBlog = async (slug: string): Promise<Blog> => {
+  // console.log(`${baseApiUrl}/blogs/${slug}`);
+  // return axios.get(`${baseApiUrl}/blogs/${slug}`);
+  const result = await fetch(`${baseApiUrl}/blogs/${slug}`).then((res) =>
+    res.json(),
+  );
+  return result;
 };
