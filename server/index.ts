@@ -8,7 +8,6 @@ if (process.env.NODE_ENV !== "production") {
   config();
 } else {
   herokuAwake(domain);
-  console.log("HRKAW ", domain);
 }
 
 import express, { Request, Response } from "express";
@@ -28,15 +27,14 @@ const port = process.env.PORT || 3000;
     await app.prepare();
     await connectDb();
     const server = express();
-    // server.use(
-    //   helmet({
-    //     contentSecurityPolicy: false,
-    //   }),
-    // );
+    server.use(
+      helmet({
+        contentSecurityPolicy: false,
+      }),
+    );
 
     server.use("/api/blogs", blogsRoute);
-
-    server.all("*", (req: Request, res: Response) => {
+    server.all("/*", (req: Request, res: Response) => {
       return handle(req, res);
     });
 

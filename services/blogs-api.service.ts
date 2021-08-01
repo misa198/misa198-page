@@ -16,5 +16,6 @@ export const getBlogs = async (
 };
 
 export const getBlog = async (slug: string): Promise<AxiosResponse<Blog>> => {
+  console.log(`${baseApiUrl}/blogs/${slug}`);
   return axios.get(`${baseApiUrl}/blogs/${slug}`);
 };
