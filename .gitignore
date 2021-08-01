@@ -2,6 +2,9 @@
 
 # OS
 .DS_Store
+.next
+dist
+.env
 
 # firebase
 .firebase
