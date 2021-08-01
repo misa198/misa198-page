@@ -12,7 +12,7 @@ export const getBlogs = async (
   query: GetBlogsDto,
 ): Promise<AxiosResponse<GetBlogsResponse>> => {
   const stringifiedQuery = queryString.stringify(query);
-  return axios.get(`/api/blogs?${stringifiedQuery}`);
+  return axios.get(`${baseApiUrl}/blogs?${stringifiedQuery}`);
 };
 
 export const getBlog = async (slug: string): Promise<AxiosResponse<Blog>> => {
