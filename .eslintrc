@@ -1,5 +1,7 @@
 {
   "extends": [
+    "next",
+    "next/core-web-vitals",
     "airbnb-typescript",
     "airbnb/hooks",
     "plugin:@typescript-eslint/recommended",
@@ -9,12 +11,12 @@
   "plugins": [
     "react",
     "@typescript-eslint",
-    "jest"
+    "jest",
+    "jsx-a11y"
   ],
   "env": {
     "browser": true,
-    "es6": true,
-    "jest": true
+    "es6": true
   },
   "globals": {
     "Atomics": "readonly",
@@ -30,15 +32,22 @@
     "project": "tsconfig.json"
   },
   "rules": {
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/anchor-is-valid": "off",
     "@typescript-eslint/dot-notation": "off",
     "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/naming-convention": "off",
     "import/extensions": "off",
+    "import/first": "off",
     "no-param-reassign": "off",
+    "no-underscore-dangle": "off",
     "linebreak-style": "off",
     "import/prefer-default-export": "off",
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     "react/jsx-props-no-spreading": "off",
+    "@next/next/link-passhref": "off",
     "prettier/prettier": [
       "error",
       {
