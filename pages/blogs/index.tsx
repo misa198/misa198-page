@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { ChangeEvent, FC, useEffect, useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
@@ -18,6 +18,10 @@ const Blogs: FC = () => {
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(undefined);
   const blogsState = useSelector((state: RootState) => state.blogs.blogs);
+
+  function onPageChange(_e: ChangeEvent<unknown>, page: number) {
+    setCurrentPage(page);
+  }
 
   useEffect(() => {
     const page = (router.query.page || "1") as string;
@@ -44,7 +48,13 @@ const Blogs: FC = () => {
         <SearchFrom />
         <BlogList blogs={blogsState.data} />
         <BlogsPaginationWrapper>
-          <Pagination />
+          {blogsState.data.length > 0 && (
+            <Pagination
+              onChange={onPageChange}
+              page={currentPage}
+              totalPages={blogsState.meta.totalPages}
+            />
+          )}
         </BlogsPaginationWrapper>
       </BlogsContainer>
     </>
