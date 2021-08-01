@@ -10,6 +10,7 @@
     "build:next": "next build",
     "build": "npm run build:next && npm run build:server",
     "start": "NODE_ENV=production node dist/server/index.js",
+    "start:local": "MONGO_URL=mongodb://localhost:27017/misa198 NODE_ENV=production node dist/server/index.js",
     "lint": "next lint"
   },
   "dependencies": {
