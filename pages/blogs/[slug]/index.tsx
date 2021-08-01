@@ -43,13 +43,10 @@ const Blog: FC<InferGetServerSidePropsType<GetServerSideProps<PropTypes>>> = ({
         <meta name="title" content={`${blog.seo.title} - Misa198`} />
         <meta name="description" content={blog.seo.description} />
         {/* Open Graph / Facebook */}
+        <meta property="og:image" content={blog.seo.image} />
         <meta property="og:url" content={`${domain}/blogs/${blog.slug}`} />
         <meta property="og:title" content={`${blog.seo.title} - Misa198`} />
-        <meta
-          property="og:description"
-          content={`${domain}/blogs/${blog.slug}`}
-        />
-        <meta property="og:image" content={blog.seo.image} />
+        <meta property="og:description" content={blog.seo.description} />
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content={`${domain}/blogs/${blog.slug}`} />
