@@ -1,5 +1,4 @@
-import { useEffect, FC } from "react";
-import { useRouter } from "next/router";
+import { FC } from "react";
 
 import { BlogCommentsWrapper, BlogCommentsTitle } from "./styled";
 
@@ -7,18 +6,7 @@ interface PropTypes {
   url: string;
 }
 
-declare const window: Window &
-  typeof globalThis & {
-    FB: any;
-  };
-
 const BlogComments: FC<PropTypes> = ({ url }) => {
-  const router = useRouter();
-
-  useEffect(() => {
-    if (window.FB) window.FB.XFBML.parse();
-  }, [router.pathname]);
-
   return (
     <BlogCommentsWrapper>
       <BlogCommentsTitle>Comments</BlogCommentsTitle>
