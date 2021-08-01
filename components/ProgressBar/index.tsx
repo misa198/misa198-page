@@ -11,6 +11,9 @@ const ProgressBar: FC = () => {
       stopDelayMs={200}
       height={3}
       showOnShallow
+      options={{
+        showSpinner: false,
+      }}
     />
   );
 };
