@@ -13,9 +13,6 @@ import { domain } from "constants/config";
 const BlogContent = dynamic(() => import("components/Pages/Blog/Content"), {
   ssr: false,
 });
-// const BlogComments = dynamic(() => import("components/Pages/Blog/Comments"), {
-//   ssr: false,
-// });
 
 interface PropTypes {
   blog: IBlog;
