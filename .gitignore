@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 .firebase
+docker-compose.dev.yml
 
 # testing
 /coverage
