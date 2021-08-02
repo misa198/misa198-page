@@ -32,7 +32,7 @@ const getBlogs = async (query: GetBlogsDto): Promise<[IBlog[], number]> => {
 };
 
 const getBlog = async (slug: string): Promise<IBlog> => {
-  const blog = await Blog.findOne({ slug });
+  const blog = await Blog.findOne({ slug, published: true });
   return blog;
 };
 
