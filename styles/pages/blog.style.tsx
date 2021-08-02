@@ -3,8 +3,4 @@ import { Container } from "@material-ui/core";
 
 export const BlogContainer = styled(Container)`
   padding-top: 2rem;
-
-  * {
-    max-width: 100%;
-  }
 `;
