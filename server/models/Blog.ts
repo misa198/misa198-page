@@ -15,6 +15,7 @@ const Blog = new mongoose.Schema({
     description: String,
     image: String,
   },
+  published: Boolean,
 });
 
 let BlogModel;

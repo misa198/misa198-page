@@ -7,7 +7,7 @@ import { GetBlogsDto } from "../dtos/blogs/get-blogs.dto";
 const getBlogs = async (query: GetBlogsDto): Promise<[IBlog[], number]> => {
   const { page = 1, key } = query;
   if (!key) {
-    const total = await Blog.countDocuments();
+    const total = await Blog.countDocuments({ published: true });
     const totalPages = Math.ceil(total / maxPageSize);
     const blogs = await Blog.find({})
       .limit(maxPageSize)
@@ -17,7 +17,10 @@ const getBlogs = async (query: GetBlogsDto): Promise<[IBlog[], number]> => {
   }
 
   const dbQuery = {
-    $or: [{ title: { $regex: new RegExp(key, "i") } }, { tags: key }],
+    $and: [
+      { $or: [{ title: { $regex: new RegExp(key, "i") } }, { tags: key }] },
+      { published: true },
+    ],
   };
   const total = await Blog.countDocuments(dbQuery);
   const totalPages = Math.ceil(total / maxPageSize);
