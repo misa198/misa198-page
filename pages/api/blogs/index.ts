@@ -3,9 +3,11 @@ import { NextApiRequest, NextApiResponse } from "next";
 import connectDB from "server/database";
 import { GetBlogsDto } from "server/dtos/blogs/get-blogs.dto";
 import service from "server/services/blogs.service";
+import { getBlogsValidation } from "server/validations/blogs/get-blogs.validation";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "GET") {
+    getBlogsValidation(req, res);
     const query = req.query as unknown as GetBlogsDto;
     try {
       const [blogs, totalPages] = await service.getBlogs(query);

@@ -1,10 +1,9 @@
 import * as joi from "joi";
-import { Request, Response, NextFunction } from "express";
+import { NextApiRequest, NextApiResponse } from "next";
 
 export const getBlogsValidation = (
-  req: Request,
-  res: Response,
-  next: NextFunction,
+  req: NextApiRequest,
+  res: NextApiResponse,
 ): any => {
   const { query } = req;
   const schema = joi.object({
@@ -17,7 +16,6 @@ export const getBlogsValidation = (
       return res.status(400).send({ message: "Bad request" });
     }
     req.query = value;
-    return next();
   } catch (e) {
     return res.status(400).send({ message: "Bad request" });
   }
