@@ -25,7 +25,9 @@ export default class MyDocument extends Document {
           {/* Global site tag (gtag.js) - Google Analytics */}
           <script
             async
-            src="https://www.googletagmanager.com/gtag/js?id=G-W91BQ70TPE"
+            src={`https://www.googletagmanager.com/gtag/js?id=G-${
+              process.env.NEXT_PUBLIC_GG_AN_ID || process.env.GG_AN_ID
+            }`}
           />
           <script
             // eslint-disable-next-line react/no-danger
@@ -35,7 +37,9 @@ export default class MyDocument extends Document {
                 dataLayer.push(arguments);
               }
               gtag("js", new Date());
-              gtag('config', 'G-W91BQ70TPE');`,
+              gtag('config', 'G-${
+                process.env.NEXT_PUBLIC_GG_AN_ID || process.env.GG_AN_ID
+              }');`,
             }}
           />
         </Head>
