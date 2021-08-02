@@ -5,6 +5,7 @@ import Head from "next/head";
 
 import { BlogContainer } from "styles/pages/blog.style";
 import BlogIntroduce from "components/Pages/Blog/Introduce";
+import BlogComments from "components/Pages/Blog/Comments";
 import { Blog as IBlog } from "types/Blog";
 import { getBlog } from "services/blogs-api.service";
 import { domain } from "constants/config";
@@ -12,9 +13,9 @@ import { domain } from "constants/config";
 const BlogContent = dynamic(() => import("components/Pages/Blog/Content"), {
   ssr: false,
 });
-const BlogComments = dynamic(() => import("components/Pages/Blog/Comments"), {
-  ssr: false,
-});
+// const BlogComments = dynamic(() => import("components/Pages/Blog/Comments"), {
+//   ssr: false,
+// });
 
 interface PropTypes {
   blog: IBlog;
@@ -44,20 +45,22 @@ const Blog: FC<InferGetServerSidePropsType<GetServerSideProps<PropTypes>>> = ({
         />
         <meta property="twitter:description" content={blog.seo.description} />
         <meta property="twitter:image" content={blog.seo.image} />
+        <script
+          async
+          defer
+          crossOrigin="anonymous"
+          src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0"
+          nonce="FAG4pfNd"
+        />
       </Head>
-      <div id="fb-root" />
-      <script
-        async
-        defer
-        crossOrigin="anonymous"
-        src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0"
-        nonce="FAG4pfNd"
-      />
-      <BlogContainer>
-        <BlogIntroduce blog={blog} />
-        <BlogContent content={blog.content} />
-        <BlogComments url={`${domain}/blogs/${blog.slug}`} />
-      </BlogContainer>
+      <>
+        <div id="fb-root" />
+        <BlogContainer>
+          <BlogIntroduce blog={blog} />
+          <BlogContent content={blog.content} />
+          <BlogComments url={`${domain}/blogs/${blog.slug}`} />
+        </BlogContainer>
+      </>
     </>
   );
 };

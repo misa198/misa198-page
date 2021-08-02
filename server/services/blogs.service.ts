@@ -9,7 +9,7 @@ const getBlogs = async (query: GetBlogsDto): Promise<[IBlog[], number]> => {
   if (!key) {
     const total = await Blog.countDocuments({ published: true });
     const totalPages = Math.ceil(total / maxPageSize);
-    const blogs = await Blog.find({})
+    const blogs = await Blog.find({ published: true })
       .limit(maxPageSize)
       .skip((page - 1) * maxPageSize)
       .sort({ createdAt: -1 });
