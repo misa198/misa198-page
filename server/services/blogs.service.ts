@@ -1,5 +1,5 @@
+import Blog from "server/models/Blog";
 import { Blog as IBlog } from "types/Blog";
-import Blog from "../database/models/Blog";
 
 import { maxPageSize } from "../../constants/server";
 import { GetBlogsDto } from "../dtos/blogs/get-blogs.dto";

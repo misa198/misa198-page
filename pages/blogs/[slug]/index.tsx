@@ -66,17 +66,12 @@ export const getServerSideProps: GetServerSideProps<PropTypes> = async ({
   resolvedUrl,
 }) => {
   const slug = resolvedUrl.split("/")[2];
-  if (slug) {
-    try {
-      const response = await getBlog(slug);
-      if (response.data) {
-        return { props: { blog: response.data } };
-      }
-    } catch (e) {
-      return { notFound: true };
-    }
+  try {
+    const response = await getBlog(slug);
+    return { props: { blog: response.data } };
+  } catch (e) {
+    return { notFound: true };
   }
-  return { notFound: true };
 };
 
 export default Blog;
