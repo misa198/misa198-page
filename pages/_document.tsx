@@ -50,6 +50,18 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          {process.env.NODE_ENV === "production" && (
+            <script
+              // eslint-disable-next-line react/no-danger
+              dangerouslySetInnerHTML={{
+                __html: `
+                if (typeof window.__REACT_DEVTOOLS_GLOBAL_HOOK__ === "object") {
+                  window.__REACT_DEVTOOLS_GLOBAL_HOOK__.inject = function () {};
+                }
+              `,
+              }}
+            />
+          )}
         </body>
       </Html>
     );
