@@ -19,8 +19,8 @@ interface PropTypes {
 
 const BlogCard: FC<PropTypes> = ({ blog }) => {
   const formattedDate = useMemo(
-    () => formatDate(blog.updatedAt),
-    [blog.updatedAt],
+    () => formatDate(blog.createdAt),
+    [blog.createdAt],
   );
 
   return (

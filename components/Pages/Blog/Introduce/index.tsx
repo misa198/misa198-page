@@ -20,8 +20,8 @@ interface PropTypes {
 
 const BlogIntroduce: FC<PropTypes> = ({ blog }) => {
   const formattedDate = useMemo(
-    () => formatDate(blog.updatedAt),
-    [blog.updatedAt],
+    () => formatDate(blog.createdAt),
+    [blog.createdAt],
   );
 
   return (
