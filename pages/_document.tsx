@@ -14,6 +14,10 @@ export default class MyDocument extends Document {
           <meta name="copyright" content="Misa198" />
           <meta name="theme-color" content={theme.palette.primary.main} />
           <meta property="og:type" content="website" />
+          <meta
+            property="fb:app_id"
+            content={process.env.NEXT_PUBLIC_FB_APP_ID || process.env.FB_APP_ID}
+          />
           <link
             href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
             rel="stylesheet"
