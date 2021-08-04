@@ -8,6 +8,10 @@ export const BlogContentWrapper = styled.div`
     max-width: 100%;
   }
 
+  img {
+    border-radius: 0.25rem;
+  }
+
   li {
     margin-left: 2rem;
   }
