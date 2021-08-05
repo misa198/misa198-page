@@ -9,10 +9,13 @@ services:
     ports:
       - 3000:3000
     environment:
-      MONGO_URL: 
-      PORT: 3000
+      MONGO_URL: mongodb://localhost:27017/misa198
       NEXT_PUBLIC_APP_DOMAIN: http://localhost:3000
       APP_DOMAIN: http://localhost:3000
+      NEXT_PUBLIC_GG_AN_ID:
+      GG_AN_ID:
+      FB_APP_ID:
+      NEXT_PUBLIC_FB_APP_ID:
     expose:
       - 3000
     networks:
