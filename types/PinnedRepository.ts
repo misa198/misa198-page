@@ -3,7 +3,6 @@ export interface PinnedRepository {
   repo: string;
   description: string;
   language: string;
-  languageColor: string;
   stars: string;
   forks: string;
 }
