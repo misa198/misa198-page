@@ -4,14 +4,20 @@ export const BlogContentWrapper = styled.div`
   width: 100%;
   line-height: 1.8;
 
+  .anchor {
+    display: none !important;
+  }
+
   * {
     max-width: 100%;
-    font-family: "Roboto" !important;
+    font-family: "Roboto";
+    line-height: 1.5 !important;
   }
 
   code {
-    font-family: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo",
-      "monospace" !important;
+    * {
+      font-family: "Source Code Pro" !important;
+    }
   }
 
   img {
@@ -23,7 +29,6 @@ export const BlogContentWrapper = styled.div`
   }
 
   p {
-    line-height: 1.5;
     font-size: 1rem;
   }
 `;
