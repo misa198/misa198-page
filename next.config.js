@@ -1,4 +1,8 @@
-module.exports = {
+const removeImports = require("next-remove-imports")({
+  options: {},
+});
+
+module.exports = removeImports({
   reactStrictMode: true,
   poweredByHeader: false,
   webpack(config) {
@@ -8,4 +12,4 @@ module.exports = {
     });
     return config;
   },
-};
+});

@@ -7,7 +7,7 @@ export default createGlobalStyle<{
   * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box
+    box-sizing: border-box;
   }
 
   body {
@@ -29,11 +29,11 @@ export default createGlobalStyle<{
   ::-webkit-scrollbar {
     width: 5px;
   }
-  
+
   ::-webkit-scrollbar-track {
     border-radius: 10px;
   }
-   
+
   ::-webkit-scrollbar-thumb {
     background: ${(props) => props.theme.colorBlack02};
     border-radius: 10px;

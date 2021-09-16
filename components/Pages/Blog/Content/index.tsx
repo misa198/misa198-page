@@ -1,10 +1,7 @@
-import { FC, useEffect, useMemo } from "react";
-import ReactMarkdown from "react-markdown";
-import rehypeRaw from "rehype-raw";
-import gfm from "remark-gfm";
-import Prism from "prismjs";
-import "prismjs/themes/prism-okaidia.css";
-
+import MarkdownPreview from "@uiw/react-markdown-preview";
+import "@uiw/react-markdown-preview/esm/styles/markdown.css";
+import "@uiw/react-markdown-preview/esm/styles/markdowncolor.css";
+import { FC, useMemo } from "react";
 import { BlogContentWrapper } from "./styled";
 
 interface PropTypes {
@@ -14,15 +11,9 @@ interface PropTypes {
 const BlogContent: FC<PropTypes> = ({ content }) => {
   const parsedContent = useMemo(() => JSON.parse(content), [content]);
 
-  useEffect(() => {
-    Prism.highlightAll();
-  }, [parsedContent]);
-
   return (
     <BlogContentWrapper>
-      <ReactMarkdown remarkPlugins={[gfm]} rehypePlugins={[rehypeRaw]}>
-        {parsedContent}
-      </ReactMarkdown>
+      <MarkdownPreview source={parsedContent} />
     </BlogContentWrapper>
   );
 };

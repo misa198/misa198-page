@@ -6,6 +6,12 @@ export const BlogContentWrapper = styled.div`
 
   * {
     max-width: 100%;
+    font-family: "Roboto" !important;
+  }
+
+  code {
+    font-family: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo",
+      "monospace" !important;
   }
 
   img {
@@ -14,5 +20,10 @@ export const BlogContentWrapper = styled.div`
 
   li {
     margin-left: 2rem;
+  }
+
+  p {
+    line-height: 1.5;
+    font-size: 1rem;
   }
 `;
