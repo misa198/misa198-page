@@ -25,12 +25,12 @@ const ProjectCard: FC<PropTypes> = ({ repository }) => {
   return (
     <ProjectCardLinkWrapper>
       <ProjectCardLink
-        href={`https://github.com/${repository.owner}/${repository.repo}`}
+        href={`https://github.com/${repository.owner}/${repository.name}`}
         target="_blank"
         rel="noreferrer"
       >
         <ProjectCardWrapper>
-          <ProjectCardTitle>{`${repository.owner} / ${repository.repo}`}</ProjectCardTitle>
+          <ProjectCardTitle>{`${repository.owner} / ${repository.name}`}</ProjectCardTitle>
           <ProjectCardDescription>
             {repository.description}
           </ProjectCardDescription>

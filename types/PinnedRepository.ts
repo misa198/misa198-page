@@ -1,6 +1,6 @@
 export interface PinnedRepository {
   owner: string;
-  repo: string;
+  name: string;
   description: string;
   language: string;
   stars: string;
