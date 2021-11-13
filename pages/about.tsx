@@ -8,7 +8,7 @@ const PortfolioPage: NextPage = () => {
   return (
     <>
       <Seo
-        title={t('app.about.title')}
+        title={`${t('app.about.title')} | ${t('app.common.name')}`}
         description={t('app.about.description')}
       />
       <div className="container mx-auto mt-12">
