@@ -7,9 +7,9 @@ import Header from './Header';
 
 const DefaultLayout: FC = ({ children }) => {
   return (
-    <div className="relative w-full min-h-screen overflow-hidden">
+    <div className="relative w-full min-h-screen overflow-hidden flex flex-col">
       <Header />
-      <div>{children}</div>
+      <div className="w-full flex-grow">{children}</div>
       <Footer />
       <ScrollToTop showUnder={100} duration={600}>
         <ScrollToTopButton />

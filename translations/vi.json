@@ -10,17 +10,16 @@
   "app.home.introduction-title": "Chào bạn, tôi là Thành Vũ.",
   "app.home.introduction-subtitle": "Rất vui được gặp bạn!",
   "app.home.introduction-see-more": "Xem thêm",
-
   "app.home.contribution-title": "Đóng góp Github",
   "app.home.contribution-total-label": "{{count}} đóng góp trong năm {{year}}",
-
   "app.home.greeting-title": "Chào!",
   "app.home.greeting-subtitle": "Tôi là một lập trình viên web. Rất mong được làm việc với bạn.",
-
   "app.home.contact-full-name": "Họ và tên *",
   "app.home.contact-email": "Email *",
   "app.home.contact-message": "Lời nhắn *",
   "app.home.contact-submit": "Xác nhận",
   "app.home.contact-error": "Đã có lỗi khi gửi lời nhắn",
-  "app.home.contact-success": "Gửi lời nhắn thành công"
+  "app.home.contact-success": "Gửi lời nhắn thành công",
+
+  "app.404.title": "404"
 }

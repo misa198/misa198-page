@@ -10,17 +10,16 @@
   "app.home.introduction-title": "Hello, I am Thanh Vu.",
   "app.home.introduction-subtitle": "Nice to meet you!",
   "app.home.introduction-see-more": "See more",
-
   "app.home.contribution-title": "Github contributions",
   "app.home.contribution-total-label": "{{count}} contributions in {{year}}",
-
   "app.home.greeting-title": "Hi there!",
   "app.home.greeting-subtitle": "I am a web developer. Looking forward to working with you.",
-
   "app.home.contact-full-name": "Full name *",
   "app.home.contact-email": "Email *",
   "app.home.contact-message": "Message *",
   "app.home.contact-submit": "Submit",
   "app.home.contact-error": "There was an error sending the message",
-  "app.home.contact-success": "Message sent successfully"
+  "app.home.contact-success": "Message sent successfully",
+
+  "app.404.title": "404"
 }
