@@ -1,5 +1,5 @@
 /* eslint-disable import/no-mutable-exports */
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const Blog = new mongoose.Schema({
   slug: String,
@@ -21,9 +21,9 @@ const Blog = new mongoose.Schema({
 let BlogModel;
 
 try {
-  BlogModel = mongoose.model("Blog");
+  BlogModel = mongoose.model('Blog');
 } catch (e) {
-  BlogModel = mongoose.model("Blog", Blog);
+  BlogModel = mongoose.model('Blog', Blog);
 }
 
 export default BlogModel;
