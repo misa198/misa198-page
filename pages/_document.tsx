@@ -1,8 +1,4 @@
-import { Children } from "react";
-import Document, { Html, Head, Main, NextScript } from "next/document";
-import { ServerStyleSheets } from "@material-ui/core";
-import { ServerStyleSheet } from "styled-components";
-import theme from "themes/material-theme";
+import Document, { Head, Html, Main, NextScript } from "next/document";
 
 export default class MyDocument extends Document {
   render(): JSX.Element {
@@ -12,7 +8,7 @@ export default class MyDocument extends Document {
           <meta name="author" content="Misa198" />
           <meta charSet="utf-8" />
           <meta name="copyright" content="Misa198" />
-          <meta name="theme-color" content={theme.palette.primary.main} />
+          {/* <meta name="theme-color" content={theme.palette.primary.main} /> */}
           <meta property="og:type" content="website" />
           <meta
             property="fb:app_id"
@@ -71,29 +67,3 @@ export default class MyDocument extends Document {
     );
   }
 }
-
-MyDocument.getInitialProps = async (ctx) => {
-  const materialUiSheets = new ServerStyleSheets();
-  const styledComponentsSheets = new ServerStyleSheet();
-
-  const originalRenderPage = ctx.renderPage;
-
-  ctx.renderPage = () =>
-    originalRenderPage({
-      enhanceApp: (App) => (props) =>
-        styledComponentsSheets.collectStyles(
-          materialUiSheets.collect(<App {...props} />),
-        ),
-    });
-
-  const initialProps = await Document.getInitialProps(ctx);
-
-  return {
-    ...initialProps,
-    styles: [
-      ...Children.toArray(initialProps.styles),
-      ...Children.toArray(styledComponentsSheets.getStyleElement()),
-      ...Children.toArray(materialUiSheets.getStyleElement()),
-    ],
-  };
-};

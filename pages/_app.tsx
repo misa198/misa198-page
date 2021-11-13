@@ -1,25 +1,12 @@
-import { useEffect, FC } from "react";
+import DefaultLayout from "@components/layouts/DefaultLayout";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import { FC } from "react";
 import { Provider } from "react-redux";
-import { ThemeProvider, CssBaseline } from "@material-ui/core";
-import { ThemeProvider as SPThemeProvider } from "styled-components";
-import GlobalStyles from "styles/GlobalStyles";
-
 import store from "store";
-import materialTheme from "themes/material-theme";
-import sTTheme from "themes/styled-components-theme";
-import Layout from "layouts";
 
 const MyApp: FC<AppProps> = (props: AppProps) => {
   const { Component, pageProps } = props;
-
-  useEffect(() => {
-    const jssStyles = document.querySelector("#jss-server-side");
-    if (jssStyles) {
-      jssStyles.parentElement.removeChild(jssStyles);
-    }
-  }, []);
 
   return (
     <>
@@ -31,15 +18,9 @@ const MyApp: FC<AppProps> = (props: AppProps) => {
         />
       </Head>
       <Provider store={store}>
-        <ThemeProvider theme={materialTheme}>
-          <SPThemeProvider theme={sTTheme}>
-            <CssBaseline />
-            <GlobalStyles />
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-          </SPThemeProvider>
-        </ThemeProvider>
+        <DefaultLayout>
+          <Component {...pageProps} />
+        </DefaultLayout>
       </Provider>
     </>
   );

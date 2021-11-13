@@ -1,24 +1,8 @@
-import { FC, useEffect } from "react";
-import dynamic from "next/dynamic";
-import { useDispatch } from "react-redux";
-import Head from "next/head";
-
-import { fetchPinnedRepositories } from "store/thunks/home.thunk";
-
-import About from "components/Pages/Home/About";
-import Introduce from "components/Pages/Home/Introduce";
-import Contact from "components/Pages/Home/Contact";
-import { domain } from "constants/config";
-
-const Projects = dynamic(() => import("components/Pages/Home/Projects"), {
-  ssr: false,
-});
-const Contributions = dynamic(
-  () => import("components/Pages/Home/Contributions"),
-  {
-    ssr: false,
-  },
-);
+import { domain } from 'constants/config';
+import Head from 'next/head';
+import { FC, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchPinnedRepositories } from 'store/thunks/home.thunk';
 
 const Home: FC = () => {
   const dispatch = useDispatch();
@@ -61,11 +45,6 @@ const Home: FC = () => {
           content="https://res.cloudinary.com/dumfvnj9f/image/upload/v1626761198/misa198/facebook-og_rzhdqd.png"
         />
       </Head>
-      <About />
-      <Projects />
-      <Contributions />
-      <Introduce />
-      <Contact />
     </>
   );
 };
