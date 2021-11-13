@@ -14,9 +14,9 @@ const Contributions: FC = () => {
       <div>
         <GitHubCalendar
           username={username}
-          loading
           fontSize={16}
           blockSize={22}
+          hideColorLegend
           labels={{
             totalCount: t('app.home.contribution-total-label'),
           }}
