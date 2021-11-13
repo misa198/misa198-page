@@ -11,10 +11,10 @@ const Introduction: FC = () => {
 
   return (
     <>
-      <div className="fixed z-0 top-0 right-0 left-auto w-full max-w-xl">
+      <div className="absolute z-0 top-0 right-0 left-auto w-full max-w-xl">
         <Image src={bg} alt="background" />
       </div>
-      <section className="container mx-auto px-4 py-12 flex relative z-10 md:pt-52 md:px-32">
+      <section className="container mx-auto px-4 py-12 mb-14 flex relative z-10 md:pt-52 md:px-32 md:mb-32">
         <div className="w-full flex flex-col items-center md:w-1/2 md:items-start md:justify-center">
           <h3
             className="font-bold text-center mb-8 md:text-left"
