@@ -50,7 +50,7 @@ const Footer: FC = () => {
         </div>
         <div className="mb-8 flex flex-col items-center md:flex-row justify-between">
           <div className="mb-5 md:mb-0">{t('app.footer.copyright')}</div>
-          <div className="flex mb-2">
+          <div className="flex mb-2 select-none">
             <span
               className="material-icons text-highlight cursor-pointer"
               data-for="change-language"
