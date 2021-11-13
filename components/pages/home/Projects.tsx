@@ -18,8 +18,12 @@ const Projects: FC = () => {
       <div className="w-full grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
         {!projects.loading
           ? projects.data.map((repository, i) => (
-              <Link key={i} href="/" passHref>
-                <a>
+              <Link
+                key={i}
+                href={`https://github.com/${repository.owner}/${repository.name}`}
+                passHref
+              >
+                <a target="_blank">
                   <ProjectCard
                     repository={repository}
                     className="animate-fadeIn"
