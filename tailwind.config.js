@@ -9,6 +9,7 @@ module.exports = {
       textColor: {
         primary: 'rgba(0, 2, 4, 0.8)',
         highlight: 'rgb(0, 133, 121)',
+        secondary: 'rgba(0, 2, 4, 0.5)',
       },
       animation: {
         'fade-in': 'fade-in 300ms',

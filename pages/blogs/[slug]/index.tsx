@@ -4,13 +4,13 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 
 import { BlogContainer } from "styles/pages/blog.style";
-import BlogIntroduce from "components/Pages/Blog/Introduce";
-import BlogComments from "components/Pages/Blog/Comments";
+import BlogIntroduce from "@components/Pagescsdc/Blog/Introduce";
+import BlogComments from "@components/Pagescsdc/Blog/Comments";
 import { Blog as IBlog } from "types/Blog";
 import { getBlog } from "services/blogs-api.service";
 import { domain } from "constants/config";
 
-const BlogContent = dynamic(() => import("components/Pages/Blog/Content"), {
+const BlogContent = dynamic(() => import("@components/Pagescsdc/Blog/Content"), {
   ssr: false,
 });
 

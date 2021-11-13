@@ -3,5 +3,9 @@
 
   "app.header.home": "Trang chủ",
   "app.header.portfolio": "Portfolio",
-  "app.header.blogs": "Blog"
+  "app.header.blogs": "Blog",
+
+  "app.home.introduction-title": "Chào bạn, tôi là Thành Vũ.",
+  "app.home.introduction-subtitle": "Rất vui được gặp bạn!",
+  "app.home.introduction-see-more": "Xem thêm"
 }

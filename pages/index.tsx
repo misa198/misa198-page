@@ -1,3 +1,4 @@
+import Introduction from '@components/pages/home/Introduction';
 import { domain } from 'constants/config';
 import Head from 'next/head';
 import { FC, useEffect } from 'react';
@@ -45,6 +46,7 @@ const Home: FC = () => {
           content="https://res.cloudinary.com/dumfvnj9f/image/upload/v1626761198/misa198/facebook-og_rzhdqd.png"
         />
       </Head>
+      <Introduction />
     </>
   );
 };

@@ -31,7 +31,7 @@ const Header: FC = () => {
   }
 
   return (
-    <header className="relative w-full container mx-auto p-4 flex justify-between items-center">
+    <header className="relative w-full container mx-auto p-4 flex justify-between items-center z-20 md:px-32">
       <ScrollLock isActive={isOpenMenu && windowWidth < 768} />
       <Link href="/" passHref>
         <a
@@ -59,7 +59,7 @@ const Header: FC = () => {
         className={classnames(
           `absolute z-20 top-0 right-0 left-auto bg-white w-64 h-screen flex flex-col py-4 pl-5 pr-4
           transform transition-transform duration-300 md:static md:flex-row md:h-auto md:p-0 md:w-auto
-          md:transform-none`,
+          md:transform-none md:bg-transparent md:transition-none`,
           {
             'translate-x-0': isOpenMenu,
             'translate-x-full': !isOpenMenu,
@@ -73,7 +73,7 @@ const Header: FC = () => {
         </div>
         {navLinks.map(({ href, label }, index) => (
           <Link key={index} href={href} passHref>
-            <a className="mb-3 md:mb-0 md:mx-2 md:hover:text-highlight md:transition-colors duration-200">
+            <a className="mb-3 md:mb-0 md:mx-4 md:hover:text-highlight md:transition-colors duration-200">
               {t(label)}
             </a>
           </Link>

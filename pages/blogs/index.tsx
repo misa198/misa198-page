@@ -3,9 +3,9 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 
-import SearchFrom from "components/Pages/Blogs/SearchForm";
-import BlogList from "components/Pages/Blogs/BlogList";
-import BlogListLoading from "components/Pages/Blogs/BlogListLoading";
+import SearchFrom from "@components/Pagescsdc/Blogs/SearchForm";
+import BlogList from "@components/Pagescsdc/Blogs/BlogList";
+import BlogListLoading from "@components/Pagescsdc/Blogs/BlogListLoading";
 import Pagination from "components/Pagination";
 import {
   BlogsContainer,
