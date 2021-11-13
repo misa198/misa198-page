@@ -11,8 +11,10 @@ const PortfolioPage: NextPage = () => {
         title={t('app.about.title')}
         description={t('app.about.description')}
       />
-      <div className="container mx-auto">
-        <h2 className="">{t('app.404.title')}</h2>
+      <div className="container mx-auto mt-12">
+        <h2 className="text-center text-xl text-gray-600">
+          {t('app.about.subtitle')}
+        </h2>
       </div>
     </>
   );
