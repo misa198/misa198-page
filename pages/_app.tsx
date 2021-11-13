@@ -4,6 +4,7 @@ import '@styles/global.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { FC } from 'react';
+import 'react-loading-skeleton/dist/skeleton.css';
 import 'tailwindcss/tailwind.css';
 
 const MyApp: FC<AppProps> = (props: AppProps) => {

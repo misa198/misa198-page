@@ -3,6 +3,15 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      container: {
+        padding: {
+          DEFAULT: '1rem',
+          sm: '2rem',
+          lg: '2rem',
+          xl: '2rem',
+          '2xl': '2rem',
+        },
+      },
       colors: {
         primary: 'rgb(0, 133, 121)',
       },
@@ -12,8 +21,8 @@ module.exports = {
         secondary: 'rgba(0, 2, 4, 0.5)',
       },
       animation: {
-        'fade-in': 'fade-in 300ms',
-        'fade-out': 'fade-out 300ms',
+        fadeIn: 'fadeIn 300ms',
+        fadeOut: 'fadeOut 300ms',
       },
       keyframes: () => ({
         fadeIn: {
@@ -36,5 +45,5 @@ module.exports = {
       textColor: ['dark'],
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
 };

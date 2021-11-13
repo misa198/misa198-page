@@ -18,6 +18,8 @@
     "paths": {
       "@app/*": ["./app/*"],
       "@components/*": ["./components/*"],
+      "@constants/*": ["./constants/*"],
+      "@models/*": ["./models/*"],
       "@public/*": ["./public/*"],
       "@styles/*": ["./styles/*"],
       "@translations/*": ["./translations/*"]

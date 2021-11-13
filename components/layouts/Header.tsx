@@ -31,7 +31,7 @@ const Header: FC = () => {
   }
 
   return (
-    <header className="relative w-full container mx-auto p-4 flex justify-between items-center z-20 md:px-32">
+    <header className="relative w-full container mx-auto py-6 flex justify-between items-center z-20">
       <ScrollLock isActive={isOpenMenu && windowWidth < 768} />
       <Link href="/" passHref>
         <a

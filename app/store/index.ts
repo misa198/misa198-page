@@ -8,11 +8,13 @@ import { createWrapper, HYDRATE, MakeStore } from 'next-redux-wrapper';
 import { AppContext } from 'next/app';
 import Router from 'next/router';
 import { Action, AnyAction, combineReducers, Reducer } from 'redux';
+import homeReducer from './slices/home.slice';
 
 const routerMiddleware = createRouterMiddleware();
 
 const rootReducer = combineReducers({
   router: routerReducer,
+  home: homeReducer,
 });
 
 export type AppState = ReturnType<typeof rootReducer>;
