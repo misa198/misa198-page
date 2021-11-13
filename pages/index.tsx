@@ -5,17 +5,9 @@ import Introduction from '@components/pages/home/Introduction';
 import Projects from '@components/pages/home/Projects';
 import { domain } from 'constants/config';
 import Head from 'next/head';
-import { FC, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchPinnedRepositories } from 'store/thunks/home.thunk';
+import { FC } from 'react';
 
 const Home: FC = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchPinnedRepositories());
-  }, [dispatch]);
-
   return (
     <>
       <Head>

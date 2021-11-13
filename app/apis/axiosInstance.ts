@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 const baseApiUrl = `${
   process.env.APP_DOMAIN || process.env.NEXT_PUBLIC_APP_DOMAIN

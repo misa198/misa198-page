@@ -22,6 +22,7 @@
       "@models/*": ["./models/*"],
       "@public/*": ["./public/*"],
       "@styles/*": ["./styles/*"],
+      "@server/*": ["./server/*"],
       "@translations/*": ["./translations/*"]
     }
   },

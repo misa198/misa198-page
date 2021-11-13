@@ -1,10 +1,8 @@
-import { AxiosResponse } from "axios";
-
-import { axiosApi } from "extensions/axios";
-import queryString from "query-string";
-
-import { GetBlogsDto } from "server/dtos/blogs/get-blogs.dto";
-import { Blog, GetBlogsResponse } from "types/Blog";
+import { Blog, GetBlogsResponse } from '@models/Blog';
+import { GetBlogsDto } from '@server/dtos/blogs/get-blogs.dto';
+import { AxiosResponse } from 'axios';
+import { axiosApi } from './axiosInstance';
+import queryString from 'query-string';
 
 export const getBlogs = async (
   query: GetBlogsDto,
