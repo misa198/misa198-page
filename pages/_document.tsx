@@ -26,6 +26,10 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
             rel="stylesheet"
           />
+          <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+          />
           {/* Global site tag (gtag.js) - Google Analytics */}
           <script
             async

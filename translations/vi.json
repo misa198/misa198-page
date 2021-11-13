@@ -2,10 +2,11 @@
   "app.common.name": "Misa198",
 
   "app.header.home": "Trang chủ",
-  "app.header.about": "Thông tin",
+  "app.header.about": "Về tôi",
   "app.header.blogs": "Blog",
 
   "app.footer.copyright": "© 2021 | Xây dựng bởi Misa198",
+  "app.footer.change-language": "English",
 
   "app.home.title": "Misa198",
   "app.home.description": "Tôi là một lập trình viên web. Rất mong được làm việc với bạn.",
@@ -23,7 +24,7 @@
   "app.home.contact-error": "Đã có lỗi khi gửi lời nhắn",
   "app.home.contact-success": "Gửi lời nhắn thành công",
 
-  "app.about.title": "Thông tin",
+  "app.about.title": "Về tôi",
   "app.about.description": "Thông tin về tôi",
   "app.about.subtitle": "Đang cập nhật...",
 
