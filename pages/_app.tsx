@@ -1,10 +1,9 @@
+import { wrapper } from '@app/store';
 import DefaultLayout from '@components/layouts/DefaultLayout';
 import '@styles/global.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { FC } from 'react';
-import { Provider } from 'react-redux';
-import store from 'store';
 import 'tailwindcss/tailwind.css';
 
 const MyApp: FC<AppProps> = (props: AppProps) => {
@@ -19,13 +18,11 @@ const MyApp: FC<AppProps> = (props: AppProps) => {
           content="width=device-width, initial-scale=1.0, maximum-scale=5"
         />
       </Head>
-      <Provider store={store}>
-        <DefaultLayout>
-          <Component {...pageProps} />
-        </DefaultLayout>
-      </Provider>
+      <DefaultLayout>
+        <Component {...pageProps} />
+      </DefaultLayout>
     </>
   );
 };
 
-export default MyApp;
+export default wrapper.withRedux(MyApp);
