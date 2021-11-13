@@ -11,17 +11,15 @@ const Contributions: FC = () => {
       <h1 className="text-2xl font-bold mb-8">
         {t('app.home.contribution-title')}
       </h1>
-      <div>
-        <GitHubCalendar
-          username={username}
-          fontSize={16}
-          blockSize={22}
-          hideColorLegend
-          labels={{
-            totalCount: t('app.home.contribution-total-label'),
-          }}
-        />
-      </div>
+      <GitHubCalendar
+        username={username}
+        fontSize={16}
+        blockSize={22}
+        hideColorLegend
+        labels={{
+          totalCount: t('app.home.contribution-total-label'),
+        }}
+      />
     </section>
   );
 };
