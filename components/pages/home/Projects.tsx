@@ -23,7 +23,7 @@ const Projects: FC = () => {
                 href={`https://github.com/${repository.owner}/${repository.name}`}
                 passHref
               >
-                <a target="_blank">
+                <a target="_blank" rel="noreferrer">
                   <ProjectCard
                     repository={repository}
                     className="animate-fadeIn"

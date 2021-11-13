@@ -69,6 +69,8 @@ const Footer: FC = () => {
                   target="_blank"
                   data-for={`nav-link-${index}`}
                   data-tip
+                  aria-label={tooltip}
+                  rel="noreferrer"
                 >
                   <Icon className="text-highlight" />
                   <Tooltip effect="solid" id={`nav-link-${index}`}>

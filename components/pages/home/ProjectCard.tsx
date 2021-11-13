@@ -14,15 +14,15 @@ const ProjectCard: FC<Props> = ({ repository, className }) => {
     <div
       className={`w-full p-4 py-6 rounded ${className} ${styles.projectCard}`}
     >
-      <h3 className="font-medium mb-4">
+      <h2 className="font-medium mb-4">
         {repository ? (
           `${repository.owner} / ${repository.name}`
         ) : (
           <Skeleton width="50%" />
         )}
-      </h3>
+      </h2>
       <p
-        className="line-clamp-3 h-16 text-secondary leading-snug mb-6"
+        className="line-clamp-3 h-16 text-gray-500 leading-snug mb-6"
         style={{ fontSize: '0.95rem' }}
       >
         {repository ? (
