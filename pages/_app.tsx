@@ -7,6 +7,7 @@ import { FC } from 'react';
 import 'react-loading-skeleton/dist/skeleton.css';
 import 'react-toastify/dist/ReactToastify.css';
 import 'tailwindcss/tailwind.css';
+import NextNprogress from 'nextjs-progressbar';
 
 const MyApp: FC<AppProps> = (props: AppProps) => {
   const { Component, pageProps } = props;
@@ -22,6 +23,16 @@ const MyApp: FC<AppProps> = (props: AppProps) => {
       </Head>
       <DefaultLayout>
         <Component {...pageProps} />
+        <NextNprogress
+          color="rgb(0, 133, 121)"
+          startPosition={0.3}
+          stopDelayMs={200}
+          height={3}
+          showOnShallow
+          options={{
+            showSpinner: false,
+          }}
+        />
       </DefaultLayout>
     </>
   );
