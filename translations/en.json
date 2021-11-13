@@ -3,5 +3,12 @@
 
   "app.header.home": "Home",
   "app.header.portfolio": "Portfolio",
-  "app.header.blogs": "Blogs"
+  "app.header.blogs": "Blogs",
+
+  "app.home.introduction-title": "Hello, I am Thanh Vu.",
+  "app.home.introduction-subtitle": "Nice to meet you!",
+  "app.home.introduction-see-more": "See more",
+
+  "app.home.contribution-title": "Github contributions",
+  "app.home.contribution-total-label": "{{count}} contributions in {{year}}"
 }

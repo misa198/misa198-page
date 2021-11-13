@@ -1,3 +1,4 @@
+import Contributions from '@components/pages/home/Contributions';
 import Introduction from '@components/pages/home/Introduction';
 import Projects from '@components/pages/home/Projects';
 import { domain } from 'constants/config';
@@ -49,6 +50,7 @@ const Home: FC = () => {
       </Head>
       <Introduction />
       <Projects />
+      <Contributions />
     </>
   );
 };
