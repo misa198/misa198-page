@@ -25,8 +25,10 @@ const Button: FC<Props> = ({
         width: className?.split('w-').length >= 2 ? '' : 'fit-content',
       }}
       className={classnames(
-        `${className} rounded py-2 px-4 cursor-pointer transition-all duration-300`,
+        `${className} rounded cursor-pointer transition-all duration-300`,
         {
+          'px-4 py-2': className?.split('p-').length < 2,
+
           'bg-primary text-white hover:bg-green-800':
             variant === 'contained' && color === 'primary',
           'bg-gray-500 text-white hover:bg-gray-700':
