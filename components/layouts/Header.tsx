@@ -12,8 +12,8 @@ const navLinks = [
     label: 'app.header.home',
   },
   {
-    href: '/portfolio',
-    label: 'app.header.portfolio',
+    href: '/about',
+    label: 'app.header.about',
   },
   {
     href: '/blogs',
