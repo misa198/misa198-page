@@ -52,7 +52,7 @@ const Footer: FC = () => {
           <div className="mb-5 md:mb-0">{t('app.footer.copyright')}</div>
           <div className="flex mb-2 select-none">
             <span
-              className="material-icons text-highlight cursor-pointer"
+              className="material-icons text-highlight cursor-pointer mx-2 md:mx-0"
               data-for="change-language"
               data-tip
               onClick={onChangeLanguage}

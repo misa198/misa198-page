@@ -54,6 +54,7 @@ const Header: FC = () => {
             'invisible opacity-0': !isOpenMenu,
           },
         )}
+        onClick={onToggleMenu}
       />
       <div
         className={classnames(
@@ -73,7 +74,10 @@ const Header: FC = () => {
         </div>
         {navLinks.map(({ href, label }, index) => (
           <Link key={index} href={href} passHref>
-            <a className="mb-3 md:mb-0 md:mx-4 md:hover:text-highlight md:transition-colors duration-200">
+            <a
+              className="mb-3 md:mb-0 md:mx-4 md:hover:text-highlight md:transition-colors duration-200"
+              onClick={onToggleMenu}
+            >
               {t(label)}
             </a>
           </Link>

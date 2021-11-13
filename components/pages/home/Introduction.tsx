@@ -27,7 +27,7 @@ const Introduction: FC = () => {
           <p className="text-center text-secondary text-2xl mb-12 md:text-left md:text-3xl">
             {t('app.home.introduction-subtitle')}
           </p>
-          <Link href="/portfolio" passHref>
+          <Link href="/about" passHref>
             <a>
               <Button variant="contained" color="primary">
                 {t('app.home.introduction-see-more')}
