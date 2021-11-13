@@ -1,3 +1,4 @@
+import Contact from '@components/pages/home/Contact';
 import Contributions from '@components/pages/home/Contributions';
 import Greeting from '@components/pages/home/Greeting';
 import Introduction from '@components/pages/home/Introduction';
@@ -53,6 +54,7 @@ const Home: FC = () => {
       <Projects />
       <Contributions />
       <Greeting />
+      <Contact />
     </>
   );
 };

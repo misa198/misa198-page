@@ -13,5 +13,12 @@
   "app.home.contribution-total-label": "{{count}} contributions in {{year}}",
 
   "app.home.greeting-title": "Hi there!",
-  "app.home.greeting-subtitle": "I am a web developer. Looking forward to working with you."
+  "app.home.greeting-subtitle": "I am a web developer. Looking forward to working with you.",
+
+  "app.home.contact-full-name": "Full name *",
+  "app.home.contact-email": "Email *",
+  "app.home.contact-message": "Message *",
+  "app.home.contact-submit": "Submit",
+  "app.home.contact-error": "There was an error sending the message",
+  "app.home.contact-success": "Message sent successfully"
 }

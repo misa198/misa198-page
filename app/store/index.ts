@@ -40,7 +40,9 @@ const makeStore: MakeStore<any> = (context): EnhancedStore => {
     reducer,
     devTools: process.env.NODE_ENV !== 'production',
     middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware().concat(routerMiddleware),
+      getDefaultMiddleware({
+        serializableCheck: false,
+      }).concat(routerMiddleware),
     preloadedState: {
       router: initialRouterState(asPath),
     },

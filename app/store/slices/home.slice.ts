@@ -1,12 +1,20 @@
 import { PinnedRepository } from '@models/PinnedRepository';
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchPinnedRepositories } from '../thunks/home.thunk';
+import {
+  fetchPinnedRepositories,
+  postGoogleSheetContact,
+} from '../thunks/home.thunk';
 
 interface State {
   pinnedRepositories: {
     data: PinnedRepository[];
     loading: boolean;
     error: boolean;
+  };
+  contact: {
+    loading: boolean;
+    error: boolean;
+    success: boolean;
   };
 }
 
@@ -15,6 +23,11 @@ const initialState: State = {
     data: [],
     loading: false,
     error: false,
+  },
+  contact: {
+    loading: false,
+    error: false,
+    success: false,
   },
 };
 
@@ -35,6 +48,20 @@ const slice = createSlice({
     builder.addCase(fetchPinnedRepositories.rejected, (state) => {
       state.pinnedRepositories.error = true;
       state.pinnedRepositories.loading = false;
+    });
+
+    builder.addCase(postGoogleSheetContact.pending, (state) => {
+      state.contact.loading = true;
+      state.contact.error = false;
+      state.contact.success = false;
+    });
+    builder.addCase(postGoogleSheetContact.fulfilled, (state) => {
+      state.contact.loading = false;
+      state.contact.success = true;
+    });
+    builder.addCase(postGoogleSheetContact.rejected, (state) => {
+      state.contact.error = true;
+      state.contact.loading = false;
     });
   },
 });

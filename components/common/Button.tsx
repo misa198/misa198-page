@@ -1,22 +1,28 @@
-import { FC } from 'react';
 import classnames from 'classnames';
+import { FC } from 'react';
 
 interface Props {
   className?: string;
   color?: 'primary' | 'secondary' | 'error' | 'success' | 'warning';
   variant?: 'text' | 'outlined' | 'contained';
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
 }
 
 const Button: FC<Props> = ({
   children,
   color = 'primary',
   variant = 'contained',
+  type = 'button',
   className,
+  disabled = false,
 }) => {
   return (
     <button
+      type={type}
+      disabled={disabled}
       style={{
-        width: 'fit-content',
+        width: className?.split('w-').length >= 2 ? '' : 'fit-content',
       }}
       className={classnames(
         `${className} rounded py-2 px-4 cursor-pointer transition-all duration-300`,
