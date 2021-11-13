@@ -1,4 +1,4 @@
-import Document, { Head, Html, Main, NextScript } from "next/document";
+import Document, { Head, Html, Main, NextScript } from 'next/document';
 
 export default class MyDocument extends Document {
   render(): JSX.Element {
@@ -50,7 +50,7 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          {process.env.NODE_ENV === "production" && (
+          {process.env.NODE_ENV === 'production' && (
             <script
               // eslint-disable-next-line react/no-danger
               dangerouslySetInnerHTML={{
