@@ -1,0 +1,6 @@
+.greeting {
+  background-image: url('/images/greeting-background.svg');
+  background-position: left top;
+  background-size: contain;
+  background-repeat: no-repeat;
+}

@@ -13,7 +13,6 @@ const Contributions: FC = () => {
       </h1>
       <div>
         <GitHubCalendar
-          showTotalCount
           username={username}
           loading
           fontSize={16}

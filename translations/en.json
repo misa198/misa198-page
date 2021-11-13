@@ -10,5 +10,8 @@
   "app.home.introduction-see-more": "See more",
 
   "app.home.contribution-title": "Github contributions",
-  "app.home.contribution-total-label": "{{count}} contributions in {{year}}"
+  "app.home.contribution-total-label": "{{count}} contributions in {{year}}",
+
+  "app.home.greeting-title": "Hi there!",
+  "app.home.greeting-subtitle": "I am a web developer. Looking forward to working with you."
 }
