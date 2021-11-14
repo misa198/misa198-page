@@ -1,5 +1,6 @@
 import { Blog } from '@models/Blog';
 import Image from 'next/image';
+import Link from 'next/link';
 import { FC } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import { formatDate } from 'utils/format-date';
@@ -18,12 +19,17 @@ const BlogCard: FC<Props> = ({ blog }) => {
         <div className={`relative w-full ${styles.blogCardImage}`}>
           <div className="absolute w-full h-full top-0 left-0 rounded-md overflow-hidden">
             {blog ? (
-              <Image
-                className="w-full h-full"
-                src={blog.seo.image}
-                alt="blog"
-                layout="fill"
-              />
+              <Link href={`/blogs/${blog.slug}`} passHref>
+                <a>
+                  <Image
+                    className="w-full h-full"
+                    src={blog.seo.image}
+                    alt="blog"
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </a>
+              </Link>
             ) : (
               <Skeleton width="100%" height="100%" />
             )}
@@ -32,7 +38,13 @@ const BlogCard: FC<Props> = ({ blog }) => {
       </div>
       <div className="flex-grow">
         <h2 className="font-medium text-xl mb-2">
-          {blog ? blog.title : <Skeleton width="100%" />}
+          {blog ? (
+            <Link href={`/blogs/${blog.slug}`} passHref>
+              <a>{blog.title}</a>
+            </Link>
+          ) : (
+            <Skeleton width="100%" />
+          )}
         </h2>
         <p className="text-sm text-gray-600 mb-2">
           {blog ? (
