@@ -10,6 +10,11 @@ import {
   InferGetServerSidePropsType,
   NextPage,
 } from 'next';
+import dynamic from 'next/dynamic';
+
+const Content = dynamic(() => import('@components/pages/blog/Content'), {
+  ssr: false,
+});
 
 interface PropTypes {
   blog: Blog;
@@ -35,9 +40,12 @@ const BlogPage: NextPage<
           nonce="FAG4pfNd"
         />
       </Seo>
+      <div id="fb-root" />
       <div className="container mx-auto mt-6">
-        <div id="fb-root" />
         <Introduction blog={blog} />
+        <div className="w-full mt-6">
+          <Content content={blog.content} />
+        </div>
         <div className="w-full mt-6">
           <Comments url={`${domain}/blogs/${blog.slug}`} />
         </div>

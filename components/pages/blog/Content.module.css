@@ -1,0 +1,30 @@
+.blogContent {
+  line-height: 1.8 !important;
+}
+
+.blogContent .anchor {
+  display: none !important;
+}
+
+.blogContent * {
+  max-width: 100%;
+  font-family: 'Roboto' !important;
+  line-height: 1.5 !important;
+}
+
+.blogContent code,
+.blogContent code * {
+  font-family: 'Source Code Pro' !important;
+}
+
+.blogContent img {
+  border-radius: 0.25rem;
+}
+
+.blogContent li {
+  margin-left: 2rem;
+}
+
+.blogContent p {
+  font-size: 1rem;
+}

@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
+const removeImports = require('next-remove-imports')({
+  options: {},
+});
+
+module.exports = removeImports({
   reactStrictMode: true,
+  poweredByHeader: false,
   images: {
     domains: ['res.cloudinary.com'],
   },
@@ -9,4 +14,4 @@ module.exports = {
     defaultLocale: 'en',
     localeDetection: true,
   },
-};
+});
