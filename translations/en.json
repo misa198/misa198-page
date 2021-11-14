@@ -33,5 +33,7 @@
   "app.blogs.search-placeholder": "Search something...",
   "app.blogs.no-result": "No result",
 
+  "app.blog.comments": "Comments",
+
   "app.404.title": "404"
 }

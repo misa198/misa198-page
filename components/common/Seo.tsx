@@ -21,6 +21,7 @@ const Seo: FC<Props> = ({
   description = defaultProps.description,
   url = defaultProps.url,
   image = defaultProps.image,
+  children,
 }) => {
   return (
     <Head>
@@ -39,6 +40,7 @@ const Seo: FC<Props> = ({
       <meta property="twitter:title" content="Misa198" />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={image} />
+      {children}
     </Head>
   );
 };

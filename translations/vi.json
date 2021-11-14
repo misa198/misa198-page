@@ -33,5 +33,7 @@
   "app.blogs.search-placeholder": "Tìm kiếm gì đó...",
   "app.blogs.no-result": "Không có kết quả",
 
+  "app.blog.comments": "Bình luận",
+
   "app.404.title": "404"
 }
