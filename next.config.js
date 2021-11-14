@@ -12,6 +12,5 @@ module.exports = removeImports({
   i18n: {
     locales: ['en', 'vi'],
     defaultLocale: 'en',
-    localeDetection: true,
   },
 });

@@ -1,5 +1,6 @@
 import { useAppDispatch, useAppSelector } from '@app/hooks/redux';
 import { useTranslate } from '@app/hooks/translate';
+import { homeActions } from '@app/store/slices/home.slice';
 import { postGoogleSheetContact } from '@app/store/thunks/home.thunk';
 import Button from '@components/common/Button';
 import contact from '@public/images/contact.svg';
@@ -7,9 +8,8 @@ import classnames from 'classnames';
 import { useFormik } from 'formik';
 import Image from 'next/image';
 import { FC, useEffect } from 'react';
-import { toast } from 'react-toastify';
-import * as yup from 'yup';
 import { SpinnerCircular } from 'spinners-react';
+import * as yup from 'yup';
 
 const schema = yup.object().shape({
   fullName: yup.string().required(),
@@ -20,22 +20,16 @@ const schema = yup.object().shape({
 const Contact: FC = () => {
   const { t } = useTranslate();
   const dispatch = useAppDispatch();
-  const { loading, success, error } = useAppSelector(
-    (state) => state.home.contact,
-  );
+  const { loading } = useAppSelector((state) => state.home.contact);
 
   useEffect(() => {
-    if (error) {
-      toast.error(t('app.home.contact-error'), {
-        theme: 'colored',
-      });
-    }
-    if (success) {
-      toast.success(t('app.home.contact-success'), {
-        theme: 'colored',
-      });
-    }
-  }, [error, success, t]);
+    dispatch(
+      homeActions.setContactNotices({
+        success: t('app.home.contact-success'),
+        error: t('app.home.contact-error'),
+      }),
+    );
+  }, [dispatch, t]);
 
   const formik = useFormik({
     initialValues: { fullName: '', email: '', message: '' },

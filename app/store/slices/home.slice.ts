@@ -1,5 +1,6 @@
 import { PinnedRepository } from '@models/PinnedRepository';
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
 import {
   fetchPinnedRepositories,
   postGoogleSheetContact,
@@ -13,8 +14,8 @@ interface State {
   };
   contact: {
     loading: boolean;
-    error: boolean;
-    success: boolean;
+    errorMessage: string;
+    successMessage: string;
   };
 }
 
@@ -26,15 +27,26 @@ const initialState: State = {
   },
   contact: {
     loading: false,
-    error: false,
-    success: false,
+    errorMessage: '',
+    successMessage: '',
   },
 };
 
 const slice = createSlice({
   name: 'home',
   initialState,
-  reducers: {},
+  reducers: {
+    setContactNotices(
+      state,
+      action: PayloadAction<{
+        error: string;
+        success: string;
+      }>,
+    ) {
+      state.contact.errorMessage = action.payload.error;
+      state.contact.successMessage = action.payload.success;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchPinnedRepositories.pending, (state) => {
       state.pinnedRepositories.data = [];
@@ -52,18 +64,21 @@ const slice = createSlice({
 
     builder.addCase(postGoogleSheetContact.pending, (state) => {
       state.contact.loading = true;
-      state.contact.error = false;
-      state.contact.success = false;
     });
     builder.addCase(postGoogleSheetContact.fulfilled, (state) => {
       state.contact.loading = false;
-      state.contact.success = true;
+      toast.success(state.contact.successMessage, {
+        theme: 'colored',
+      });
     });
     builder.addCase(postGoogleSheetContact.rejected, (state) => {
-      state.contact.error = true;
       state.contact.loading = false;
+      toast.error(state.contact.errorMessage, {
+        theme: 'colored',
+      });
     });
   },
 });
 
 export default slice.reducer;
+export const homeActions = slice.actions;
