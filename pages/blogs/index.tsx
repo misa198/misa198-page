@@ -1,4 +1,5 @@
 import { useAppDispatch, useAppSelector } from '@app/hooks/redux';
+import { useTranslate } from '@app/hooks/translate';
 import { fetchBlogs } from '@app/store/thunks/blogs.thunk';
 import BlogsList from '@components/pages/blogs/BlogsList';
 import { NextPage } from 'next';
@@ -6,6 +7,7 @@ import { useRouter } from 'next/router';
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 
 const BlogsPage: NextPage = () => {
+  const { t } = useTranslate();
   const dispatch = useAppDispatch();
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(undefined);
@@ -56,6 +58,14 @@ const BlogsPage: NextPage = () => {
 
   return (
     <div className="container mx-auto mt-4">
+      <form className="w-full mb-8" onSubmit={onSubmitSearchForm}>
+        <input
+          type="text"
+          placeholder={t('app.blogs.search-placeholder')}
+          className="w-full border rounded-md px-4 py-3 outline-none"
+          onChange={onKeyChange}
+        />
+      </form>
       <BlogsList blogs={blogsState.data} loading={blogsState.loading} />
     </div>
   );

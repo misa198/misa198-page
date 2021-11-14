@@ -28,5 +28,7 @@
   "app.about.description": "About me",
   "app.about.subtitle": "Updating about...",
 
+  "app.blogs.search-placeholder": "Search something...",
+
   "app.404.title": "404"
 }

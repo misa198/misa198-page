@@ -28,5 +28,7 @@
   "app.about.description": "Thông tin về tôi",
   "app.about.subtitle": "Đang cập nhật...",
 
+  "app.blogs.search-placeholder": "Tìm kiếm gì đó...",
+
   "app.404.title": "404"
 }
