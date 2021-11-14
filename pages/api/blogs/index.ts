@@ -1,12 +1,11 @@
-import { NextApiRequest, NextApiResponse } from "next";
-
-import connectDB from "server/database";
-import { GetBlogsDto } from "server/dtos/blogs/get-blogs.dto";
-import service from "server/services/blogs.service";
-import { getBlogsValidation } from "server/validations/blogs/get-blogs.validation";
+import connectDB from '@server/database';
+import { GetBlogsDto } from '@server/dtos/blogs/get-blogs.dto';
+import * as service from '@server/services/blogs.service';
+import { getBlogsValidation } from '@server/validations/blogs/get-blogs.validation';
+import { NextApiRequest, NextApiResponse } from 'next';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  if (req.method === "GET") {
+  if (req.method === 'GET') {
     getBlogsValidation(req, res);
     const query = req.query as unknown as GetBlogsDto;
     try {
@@ -19,7 +18,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         },
       });
     } catch (e) {
-      return res.status(400).send({ message: "Bad request" });
+      return res.status(400).send({ message: 'Bad request' });
     }
   }
 };

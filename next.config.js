@@ -1,15 +1,17 @@
-const removeImports = require("next-remove-imports")({
+/** @type {import('next').NextConfig} */
+const removeImports = require('next-remove-imports')({
   options: {},
 });
 
 module.exports = removeImports({
   reactStrictMode: true,
   poweredByHeader: false,
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ["@svgr/webpack"],
-    });
-    return config;
+  images: {
+    domains: ['res.cloudinary.com'],
+  },
+  i18n: {
+    locales: ['en', 'vi'],
+    defaultLocale: 'en',
+    localeDetection: true,
   },
 });

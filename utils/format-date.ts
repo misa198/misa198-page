@@ -1,5 +1,5 @@
+import dayjs from 'dayjs';
+
 export function formatDate(date: Date): string {
-  return `${new Date(date).toLocaleDateString()} ${new Date(
-    date,
-  ).toLocaleTimeString()}`;
+  return dayjs(date).format('DD/MM/YYYY HH:mm');
 }

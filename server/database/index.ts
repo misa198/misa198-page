@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
+import mongoose from 'mongoose';
+import { NextApiHandler, NextApiRequest, NextApiResponse } from 'next';
 
 const connectDB =
   (handler: NextApiHandler) =>
@@ -15,7 +15,7 @@ const connectDB =
       useNewUrlParser: true,
     });
     // eslint-disable-next-line no-console
-    console.log("Connected to MongoDB 💿");
+    console.log('Connected to MongoDB 💿');
     return handler(req, res);
   };
 

@@ -1,28 +1,23 @@
-import { ChangeEvent, FC, FormEvent, useEffect, useState } from "react";
-import Head from "next/head";
-import { useRouter } from "next/router";
-import { useDispatch, useSelector } from "react-redux";
+import { useAppDispatch, useAppSelector } from '@app/hooks/redux';
+import { useTranslate } from '@app/hooks/translate';
+import { fetchBlogs } from '@app/store/thunks/blogs.thunk';
+import Pagination from '@components/common/Pagination';
+import Seo from '@components/common/Seo';
+import BlogsList from '@components/pages/blogs/BlogsList';
+import { NextPage } from 'next';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 
-import SearchFrom from "components/Pages/Blogs/SearchForm";
-import BlogList from "components/Pages/Blogs/BlogList";
-import BlogListLoading from "components/Pages/Blogs/BlogListLoading";
-import Pagination from "components/Pagination";
-import {
-  BlogsContainer,
-  BlogsPaginationWrapper,
-} from "styles/pages/blogs.style";
-import { fetchBlogs } from "store/thunks/blogs.thunk";
-import { RootState } from "store";
-import { domain } from "constants/config";
-
-const Blogs: FC = () => {
-  const dispatch = useDispatch();
+const BlogsPage: NextPage = () => {
+  const { t } = useTranslate();
+  const dispatch = useAppDispatch();
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(undefined);
-  const [keyword, setKeyWord] = useState("");
-  const blogsState = useSelector((state: RootState) => state.blogs.blogs);
+  const [keyword, setKeyWord] = useState('');
+  const blogsState = useAppSelector((state) => state.blogs.blogs);
 
-  function onPageChange(_e: ChangeEvent<unknown>, page: number) {
+  function onPageChange(page: number) {
     router.push({
       pathname: router.pathname,
       query: {
@@ -48,16 +43,16 @@ const Blogs: FC = () => {
   }
 
   useEffect(() => {
-    const page = (router.query.page || "1") as string;
+    const page = (router.query.page || '1') as string;
     let _page = 0;
     try {
       _page = parseInt(page, 10);
       setCurrentPage(_page);
     } catch (e) {
-      router.push("/blogs");
+      router.push('/blogs');
     }
 
-    const queryKeyword = (router.query.key || "") as string;
+    const queryKeyword = (router.query.key || '') as string;
     setKeyWord(queryKeyword);
 
     dispatch(fetchBlogs({ page: _page, key: queryKeyword }));
@@ -66,59 +61,46 @@ const Blogs: FC = () => {
 
   return (
     <>
-      <Head>
-        <title>Blogs - Misa198</title>
-        {/* Primary Meta Tags */}
-        <meta name="title" content="Blogs - Misa198" />
-        <meta
-          name="description"
-          content="I am a web developer. Looking forward to working with you."
-        />
-        {/* Open Graph / Facebook */}
-        <meta property="og:url" content={`${domain}/blogs`} />
-        <meta property="og:title" content="Blogs - Misa198" />
-        <meta
-          property="og:description"
-          content="I am a web developer. Looking forward to working with you."
-        />
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/dumfvnj9f/image/upload/v1626761198/misa198/facebook-og_rzhdqd.png"
-        />
-        {/* Twitter */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content={`${domain}/blogs`} />
-        <meta property="twitter:title" content="Blogs - Misa198" />
-        <meta
-          property="twitter:description"
-          content="I am a web developer. Looking forward to working with you."
-        />
-        <meta
-          property="twitter:image"
-          content="https://res.cloudinary.com/dumfvnj9f/image/upload/v1626761198/misa198/facebook-og_rzhdqd.png"
-        />
-      </Head>
-      <BlogsContainer>
-        <SearchFrom
-          keyword={keyword}
-          onChange={onKeyChange}
-          onSubmit={onSubmitSearchForm}
-        />
-        {blogsState.loading ? (
-          <BlogListLoading />
-        ) : (
-          <BlogList blogs={blogsState.data} />
-        )}
-        <BlogsPaginationWrapper>
-          <Pagination
-            onChange={onPageChange}
-            page={currentPage}
-            totalPages={blogsState.meta.totalPages}
+      <Seo
+        title={`${t('app.blogs.title')} | ${t('app.common.name')}`}
+        description={t('app.blogs.description')}
+      />
+      <div className="container mx-auto mt-4">
+        <form className="w-full mb-8" onSubmit={onSubmitSearchForm}>
+          <input
+            type="text"
+            placeholder={t('app.blogs.search-placeholder')}
+            className="w-full border rounded-md px-4 py-3 outline-none"
+            onChange={onKeyChange}
           />
-        </BlogsPaginationWrapper>
-      </BlogsContainer>
+        </form>
+        {!blogsState.loading && blogsState.data.length === 0 ? (
+          <div className="w-full flex flex-col justify-center items-center mt-12">
+            <Image
+              src="/images/empty.svg"
+              alt="empty"
+              width={310}
+              height={250}
+            />
+            <h2 className="mt-6 text-center text-2xl text-gray-600">
+              {t('app.blogs.no-result')}
+            </h2>
+          </div>
+        ) : (
+          <>
+            <BlogsList blogs={blogsState.data} loading={blogsState.loading} />
+            <div className="mt-6 flex justify-center">
+              <Pagination
+                totalPages={blogsState.meta.totalPages}
+                currentPage={currentPage}
+                onChangePage={onPageChange}
+              />
+            </div>
+          </>
+        )}
+      </div>
     </>
   );
 };
 
-export default Blogs;
+export default BlogsPage;

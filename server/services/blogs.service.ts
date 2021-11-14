@@ -1,10 +1,11 @@
-import Blog from "server/models/Blog";
-import { Blog as IBlog } from "types/Blog";
+import { maxPageSize } from '@constants/server';
+import { Blog as IBlog } from '@models/Blog';
+import { GetBlogsDto } from '@server/dtos/blogs/get-blogs.dto';
+import Blog from '@server/models/Blog';
 
-import { maxPageSize } from "../../constants/server";
-import { GetBlogsDto } from "../dtos/blogs/get-blogs.dto";
-
-const getBlogs = async (query: GetBlogsDto): Promise<[IBlog[], number]> => {
+export const getBlogs = async (
+  query: GetBlogsDto,
+): Promise<[IBlog[], number]> => {
   const { page = 1, key } = query;
   if (!key) {
     const total = await Blog.countDocuments({ published: true });
@@ -18,7 +19,7 @@ const getBlogs = async (query: GetBlogsDto): Promise<[IBlog[], number]> => {
 
   const dbQuery = {
     $and: [
-      { $or: [{ title: { $regex: new RegExp(key, "i") } }, { tags: key }] },
+      { $or: [{ title: { $regex: new RegExp(key, 'i') } }, { tags: key }] },
       { published: true },
     ],
   };
@@ -31,9 +32,7 @@ const getBlogs = async (query: GetBlogsDto): Promise<[IBlog[], number]> => {
   return [blogs, totalPages];
 };
 
-const getBlog = async (slug: string): Promise<IBlog> => {
+export const getBlog = async (slug: string): Promise<IBlog> => {
   const blog = await Blog.findOne({ slug, published: true });
   return blog;
 };
-
-export default { getBlogs, getBlog };
