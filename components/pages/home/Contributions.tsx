@@ -1,7 +1,10 @@
 import { useTranslate } from '@app/hooks/translate';
 import { username } from '@constants/config';
+import dynamic from 'next/dynamic';
 import { FC } from 'react';
 import GitHubCalendar from 'react-github-calendar';
+
+const Tooltip = dynamic(() => import('react-tooltip'), { ssr: false });
 
 const Contributions: FC = () => {
   const { t } = useTranslate();
@@ -19,7 +22,9 @@ const Contributions: FC = () => {
         labels={{
           totalCount: t('app.home.contribution-total-label'),
         }}
-      />
+      >
+        <Tooltip html />
+      </GitHubCalendar>
     </section>
   );
 };

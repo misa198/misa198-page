@@ -9,10 +9,11 @@
   "app.footer.change-language": "English",
 
   "app.home.title": "Misa198",
-  "app.home.description": "Tôi là một lập trình viên web. Rất mong được làm việc với bạn.",
+  "app.home.description": "Chào bạn, tôi là Thành Vũ. Tôi là một lập trình viên web. Rất mong được làm việc với bạn.",
   "app.home.introduction-title": "Chào bạn, tôi là Thành Vũ.",
   "app.home.introduction-subtitle": "Rất vui được gặp bạn!",
   "app.home.introduction-see-more": "Xem thêm",
+  "app.home.projects-title": "Project",
   "app.home.contribution-title": "Đóng góp Github",
   "app.home.contribution-total-label": "{{count}} đóng góp trong năm qua",
   "app.home.greeting-title": "Chào!",

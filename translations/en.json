@@ -9,10 +9,11 @@
   "app.footer.change-language": "Tiếng Việt",
 
   "app.home.title": "Misa198",
-  "app.home.description": "I am a web developer. Looking forward to working with you.",
+  "app.home.description": "Hello, I am Thanh Vu. I am a web developer. Looking forward to working with you.",
   "app.home.introduction-title": "Hello, I am Thanh Vu.",
   "app.home.introduction-subtitle": "Nice to meet you!",
   "app.home.introduction-see-more": "See more",
+  "app.home.projects-title": "Projects",
   "app.home.contribution-title": "Github contributions",
   "app.home.contribution-total-label": "{{count}} contributions in the past year",
   "app.home.greeting-title": "Hi there!",
