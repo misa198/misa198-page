@@ -1,6 +1,7 @@
 import { useAppDispatch, useAppSelector } from '@app/hooks/redux';
 import { useTranslate } from '@app/hooks/translate';
 import { fetchBlogs } from '@app/store/thunks/blogs.thunk';
+import Pagination from '@components/common/Pagination';
 import BlogsList from '@components/pages/blogs/BlogsList';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
@@ -14,7 +15,7 @@ const BlogsPage: NextPage = () => {
   const [keyword, setKeyWord] = useState('');
   const blogsState = useAppSelector((state) => state.blogs.blogs);
 
-  function onPageChange(_e: ChangeEvent<unknown>, page: number) {
+  function onPageChange(page: number) {
     router.push({
       pathname: router.pathname,
       query: {
@@ -67,6 +68,13 @@ const BlogsPage: NextPage = () => {
         />
       </form>
       <BlogsList blogs={blogsState.data} loading={blogsState.loading} />
+      <div className="mt-6 flex justify-center">
+        <Pagination
+          totalPages={blogsState.meta.totalPages}
+          currentPage={currentPage}
+          onChangePage={onPageChange}
+        />
+      </div>
     </div>
   );
 };

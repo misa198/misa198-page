@@ -7,6 +7,7 @@ interface Props {
   variant?: 'text' | 'outlined' | 'contained';
   type?: 'button' | 'submit' | 'reset';
   disabled?: boolean;
+  onClick?: () => void;
 }
 
 const Button: FC<Props> = ({
@@ -16,6 +17,7 @@ const Button: FC<Props> = ({
   type = 'button',
   className,
   disabled = false,
+  onClick,
 }) => {
   return (
     <button
@@ -71,6 +73,7 @@ const Button: FC<Props> = ({
             variant === 'outlined' && color === 'warning',
         },
       )}
+      onClick={onClick}
     >
       {children}
     </button>
