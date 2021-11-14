@@ -10,7 +10,13 @@ const DefaultLayout: FC = ({ children }) => {
       <Header />
       <div className="w-full flex-grow">{children}</div>
       <Footer />
-      <ScrollToTop showUnder={100} duration={600}>
+      <ScrollToTop
+        showUnder={100}
+        duration={600}
+        style={{
+          zIndex: 5,
+        }}
+      >
         <ScrollToTopButton />
       </ScrollToTop>
     </div>
