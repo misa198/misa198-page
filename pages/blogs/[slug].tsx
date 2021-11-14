@@ -23,7 +23,7 @@ interface PropTypes {
 const BlogPage: NextPage<
   InferGetServerSidePropsType<GetServerSideProps<PropTypes>>
 > = ({ blog }) => {
-  const { t } = useTranslate();
+  const { t, locale } = useTranslate();
 
   return (
     <>
@@ -31,6 +31,7 @@ const BlogPage: NextPage<
         title={`${blog.seo.title} | ${t('app.common.name')}`}
         description={blog.seo.description}
         image={blog.seo.image}
+        url={`${domain}${locale === 'vi' ? '/vi' : '/en'}/blogs/${blog.slug}`}
       >
         <script
           async

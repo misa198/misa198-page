@@ -4,13 +4,14 @@ import { fetchBlogs } from '@app/store/thunks/blogs.thunk';
 import Pagination from '@components/common/Pagination';
 import Seo from '@components/common/Seo';
 import BlogsList from '@components/pages/blogs/BlogsList';
+import { domain } from '@constants/config';
 import { NextPage } from 'next';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 
 const BlogsPage: NextPage = () => {
-  const { t } = useTranslate();
+  const { t, locale } = useTranslate();
   const dispatch = useAppDispatch();
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(undefined);
@@ -64,6 +65,7 @@ const BlogsPage: NextPage = () => {
       <Seo
         title={`${t('app.blogs.title')} | ${t('app.common.name')}`}
         description={t('app.blogs.description')}
+        url={`${domain}${locale === 'vi' ? '/vi' : '/en'}/blogs`}
       />
       <div className="container mx-auto mt-4">
         <form className="w-full mb-8" onSubmit={onSubmitSearchForm}>
