@@ -28,7 +28,10 @@
   "app.about.description": "Thông tin về tôi",
   "app.about.subtitle": "Đang cập nhật...",
 
+  "app.blogs.title": "Blog",
+  "app.blogs.description": "Tôi là một lập trình viên web. Rất mong được làm việc với bạn.",
   "app.blogs.search-placeholder": "Tìm kiếm gì đó...",
+  "app.blogs.no-result": "Không có kết quả",
 
   "app.404.title": "404"
 }

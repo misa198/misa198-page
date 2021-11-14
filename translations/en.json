@@ -28,7 +28,10 @@
   "app.about.description": "About me",
   "app.about.subtitle": "Updating about...",
 
+  "app.blogs.title": "Blogs",
+  "app.blogs.description": "I am a web developer. Looking forward to working with you.",
   "app.blogs.search-placeholder": "Search something...",
+  "app.blogs.no-result": "No result",
 
   "app.404.title": "404"
 }
