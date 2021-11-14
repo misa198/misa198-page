@@ -2,6 +2,7 @@ import { getBlog } from '@app/apis/blogsApi';
 import { useTranslate } from '@app/hooks/translate';
 import Seo from '@components/common/Seo';
 import Comments from '@components/pages/blog/Comments';
+import Introduction from '@components/pages/blog/Introduction';
 import { domain } from '@constants/config';
 import { Blog } from '@models/Blog';
 import {
@@ -36,7 +37,7 @@ const BlogPage: NextPage<
       </Seo>
       <div className="container mx-auto mt-6">
         <div id="fb-root" />
-        <h1>Blog Page</h1>
+        <Introduction blog={blog} />
         <div className="w-full mt-6">
           <Comments url={`${domain}/blogs/${blog.slug}`} />
         </div>
