@@ -5,4 +5,5 @@ export interface PinnedRepository {
   language: string;
   stars: string;
   forks: string;
+  link: string;
 }

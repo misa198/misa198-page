@@ -24,7 +24,9 @@ const Projects: FC = () => {
           ? projects.data.map((repository, i) => (
               <Link
                 key={i}
-                href={`https://github.com/${repository.owner}/${repository.repo}`}
+                href={`https://github.com/${repository.owner.split('/')[0]}/${
+                  repository.repo
+                }`}
                 passHref
               >
                 <a target="_blank" rel="noreferrer">

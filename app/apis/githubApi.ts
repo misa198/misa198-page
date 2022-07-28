@@ -5,5 +5,5 @@ import { PinnedRepository } from '@models/PinnedRepository';
 
 export async function getPinnedRepositories(): Promise<PinnedRepository[]> {
   const response = await axios.get(`${ghPinRepoUrlApi}/?username=${username}`);
-  return response.data.data;
+  return response.data;
 }

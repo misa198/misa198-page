@@ -16,7 +16,7 @@ const ProjectCard: FC<Props> = ({ repository, className }) => {
     >
       <h2 className="font-medium mb-4">
         {repository ? (
-          `${repository.owner} / ${repository.repo}`
+          `${repository.owner.split('/')[0]} / ${repository.repo}`
         ) : (
           <Skeleton width="50%" />
         )}
