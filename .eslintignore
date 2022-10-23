@@ -1,6 +1,1 @@
-node_modules/
-build/
-dist/
-next.config.js
-tailwind.config.js
-data.ts
+/node_modules
