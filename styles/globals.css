@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif !important;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
