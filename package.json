@@ -13,6 +13,7 @@
     "@commitlint/cli": "^17.2.0",
     "@commitlint/config-conventional": "^17.2.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@tailwindcss/line-clamp": "^0.4.2",
     "@types/node": "^18.11.9",
     "autoprefixer": "^10.4.13",
     "eslint": "^8.27.0",
@@ -24,13 +25,20 @@
     "nuxt": "3.0.0",
     "postcss": "^8.4.19",
     "prettier": "^2.7.1",
+    "sass": "^1.56.1",
     "tailwindcss": "^3.2.4",
-    "typescript": "^4.9.3"
+    "typescript": "^4.9.3",
+    "vue-i18n": "^9.2.2"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,vue}": [
       "npm run prettier",
       "npm run lint"
     ]
+  },
+  "packageManager": "yarn@1.22.19",
+  "dependencies": {
+    "feather-icons": "4",
+    "vue-feather": "2"
   }
 }

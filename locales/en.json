@@ -1,0 +1,47 @@
+{
+  "common": {
+    "name": "Misa198"
+  },
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "blogs": "Blogs"
+  },
+  "footer": {
+    "copyright": "© 2021 | Made by Misa198",
+    "change-language": "Tiếng Việt"
+  },
+  "home": {
+    "title": "Misa198",
+    "description": "Hello, I am Thanh Vu. I am a web developer. Looking forward to working with you.",
+    "introduction-title": "Hello, I am Thanh Vu.",
+    "introduction-subtitle": "Nice to meet you!",
+    "introduction-see-more": "See more",
+    "projects-title": "Projects",
+    "contribution-title": "Github contributions",
+    "contribution-total-label": "{count} contributions in the past year",
+    "greeting-title": "Hi there!",
+    "greeting-subtitle": "I am a web developer. Looking forward to working with you.",
+    "contact-full-name": "Full name *",
+    "contact-email": "Email *",
+    "contact-message": "Message *",
+    "contact-submit": "Submit",
+    "contact-error": "There was an error sending the message",
+    "contact-success": "Message sent successfully"
+  },
+  "about": {
+    "title": "About",
+    "description": "About me",
+    "subtitle": "Updating about..."
+  },
+  "blogs": {
+    "title": "Blogs",
+    "description": "I am a web developer. Looking forward to working with you.",
+    "search-placeholder": "Search something...",
+    "no-result": "No result"
+  },
+  "blog": {
+    "blog.comments": "Comments"
+  },
+  "404.title": "404"
+}

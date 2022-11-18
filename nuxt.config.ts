@@ -1,5 +1,10 @@
+import head from './constants/head';
+
 export default defineNuxtConfig({
-  css: ["~/assets/styles/global.css"],
+  app: {
+    head,
+  },
+  css: ['~/assets/styles/global.css'],
   postcss: {
     plugins: {
       tailwindcss: {},

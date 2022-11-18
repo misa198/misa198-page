@@ -1,3 +1,8 @@
+<script lang="ts" setup>
+import DefaultHeaderVue from '~/components/layout/DefaultHeader.vue';
+</script>
+
 <template>
-  <div></div>
+  <DefaultHeaderVue />
+  <slot />
 </template>

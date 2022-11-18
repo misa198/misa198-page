@@ -1,0 +1,49 @@
+{
+  "common": {
+    "name": "Misa198"
+  },
+  "header": {
+    "home": "Trang chủ",
+    "about": "Về tôi",
+    "blogs": "Blog"
+  },
+  "footer": {
+    "copyright": "© 2021 | Xây dựng bởi Misa198",
+    "change-language": "English"
+  },
+  "home": {
+    "title": "Misa198",
+    "description": "Chào bạn, tôi là Thành Vũ. Tôi là một lập trình viên web. Rất mong được làm việc với bạn.",
+    "introduction-title": "Chào bạn, tôi là Thành Vũ.",
+    "introduction-subtitle": "Rất vui được gặp bạn!",
+    "introduction-see-more": "Xem thêm",
+    "projects-title": "Project",
+    "contribution-title": "Đóng góp Github",
+    "contribution-total-label": "{count} đóng góp trong năm qua",
+    "greeting-title": "Chào!",
+    "greeting-subtitle": "Tôi là một lập trình viên web. Rất mong được làm việc với bạn.",
+    "contact-full-name": "Họ và tên *",
+    "contact-email": "Email *",
+    "contact-message": "Lời nhắn *",
+    "contact-submit": "Xác nhận",
+    "contact-error": "Đã có lỗi khi gửi lời nhắn",
+    "contact-success": "Gửi lời nhắn thành công"
+  },
+  "about": {
+    "title": "Về tôi",
+    "description": "Thông tin về tôi",
+    "subtitle": "Đang cập nhật..."
+  },
+  "blogs": {
+    "title": "Blog",
+    "description": "Tôi là một lập trình viên web. Rất mong được làm việc với bạn.",
+    "search-placeholder": "Tìm kiếm gì đó...",
+    "no-result": "Không có kết quả"
+  },
+  "blog": {
+    "comments": "Bình luận"
+  },
+  "404": {
+    "title": "404"
+  }
+}
