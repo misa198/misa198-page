@@ -1,16 +1,4 @@
 /** @type {import('next').NextConfig} */
-const removeImports = require('next-remove-imports')({
-  options: {},
-});
+const nextConfig = {}
 
-module.exports = removeImports({
-  reactStrictMode: true,
-  poweredByHeader: false,
-  images: {
-    domains: ['res.cloudinary.com'],
-  },
-  i18n: {
-    locales: ['en', 'vi'],
-    defaultLocale: 'en',
-  },
-});
+module.exports = nextConfig
